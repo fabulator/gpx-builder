@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+    - 9
+install:
+    - npm install
+    - npm install -g codecov
+script:
+    - npm run js-lint-export
+    - npm run flow
+after_success:
+  - codecov
+sudo: required
+deploy:
+  provider: npm
+  email: michal@fabulator.cz
+  api_key: $NPM_TOKEN
+  on:
+    tags: true
