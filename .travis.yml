@@ -4,9 +4,11 @@ node_js:
 install:
     - npm install
     - npm install -g codecov
+    - npm run flow-init
 script:
-    - npm run js-lint-export
+    - npm run lint-export
     - npm run flow
+    - npm run test
 after_success:
   - codecov
 sudo: required
