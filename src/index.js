@@ -1,6 +1,6 @@
 // @flow
 import { XMLCreator } from './creators';
-import { DefaultBuilder } from './builders';
+import { BaseBuilder, models as BaseBuilderModels } from './builder';
 import type { CreatorInterface } from './creators/CreatorInterface';
 
 import type {
@@ -36,4 +36,4 @@ export type {
     GPXBuildData,
 };
 
-export { DefaultBuilder, buildGPX };
+export { BaseBuilder, BaseBuilderModels, buildGPX };

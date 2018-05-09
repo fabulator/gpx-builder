@@ -1,0 +1,15 @@
+.eslintrc.js
+.flowconfig
+.gitignore
+.npmignore
+.travis.yml
+jest.config.js
+renovate.json
+rollup.config.js
+test
+.idea
+dev
+flow-typed
+tests_results
+.esdoc.json
+jest.config.build.js

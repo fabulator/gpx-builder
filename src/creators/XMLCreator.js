@@ -33,14 +33,14 @@ export default class XMLCreator implements CreatorInterface {
             return;
         }
 
-        if (value instanceof Array && typeof value[0] === 'object') {
+        if (Array.isArray(value) && typeof value[0] === 'object') {
             value.forEach((item) => {
                 this.generateXmlData(dir.ele(key), item);
             });
             return;
         }
 
-        if (value instanceof Array) {
+        if (Array.isArray(value)) {
             dir.ele(key, value.join(','));
             return;
         }

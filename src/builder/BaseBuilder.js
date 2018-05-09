@@ -1,17 +1,23 @@
 // @flow
-import type { GPXBuildData, Meta, WayPoint, Track, Route, Extensions } from '../types';
+import type { GPXBuildData, WayPoint, Route, Extensions } from './../types';
+import { Track, Metadata } from './models';
 
-export default class DefaultBuilder {
+export default class BaseBuilder {
     data: GPXBuildData;
     schemaLocation: Array<string>;
 
-    constructor() {
+    constructor(useGarminExtensions: boolean = true) {
         this.data = {};
         this.schemaLocation = ['http://www.topografix.com/GPX/1/1', 'http://www.topografix.com/GPX/1/1/gpx.xsd'];
+
+        if (useGarminExtensions) {
+            this.setTrackpointExtension();
+            this.setGarminExtension();
+        }
     }
 
-    setMetadata(metadata: Meta): this {
-        this.data.metadata = metadata;
+    setMetadata(metadata: Metadata): this {
+        this.data.metadata = metadata.toObject();
         return this;
     }
 
@@ -26,7 +32,7 @@ export default class DefaultBuilder {
     }
 
     setTracks(tracks: Array<Track>): this {
-        this.data.trk = tracks;
+        this.data.trk = tracks.map(track => track.getData());
         return this;
     }
 
@@ -73,7 +79,7 @@ export default class DefaultBuilder {
         return {
             ...this.data,
             attributes: {
-                creator: 'MY',
+                creator: 'fabulator:gpx-builder',
                 version: '1.1',
                 xmlns: 'http://www.topografix.com/GPX/1/1',
                 'xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',

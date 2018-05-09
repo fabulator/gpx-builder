@@ -4,14 +4,16 @@
   "description": "Builder of GPX files",
   "main": "./src/index.js",
   "scripts": {
-    "js-lint": "node node_modules/eslint/bin/eslint.js --ext .js ./src ./tests",
-    "js-lint-export": "npm run js-lint -- -o ./tests_results/checkstyle/js-checkstyle.xml -f checkstyle",
-    "flow": "node node_modules/flow-bin/vendor/flow",
-    "flow-coverage": "node node_modules/flow-coverage-report/bin/flow-coverage-report.js -f \"node node_modules/flow-bin/vendor/flow\" -i ./src/**/*.js* -t html -t text -t json -o tests_results/coverage/flow",
-    "flow-init": "node node_modules/flow-typed/dist/cli.js install xmlbuilder@x.x",
-    "build": "rm -rf ./dist && node node_modules/rollup/bin/rollup --config ./rollup.config.js",
-    "test": "node ./node_modules/jest/bin/jest.js",
-    "precommit": "npm run js-lint && npm run flow && npm run build"
+    "lint": "eslint --ext .js ./src ./tests",
+    "lint-export": "npm run lint -- -o ./tests_results/checkstyle/js-checkstyle.xml -f checkstyle",
+    "flow": "flow",
+    "flow-coverage": "flow-coverage-report -f \"node node_modules/flow-bin/vendor/flow\" -i \"./src/**/*.js*\" -t html -t text -t json -o tests_results/coverage/flow",
+    "flow-init": "flow-typed install jest@22.x xmlbuilder@x.x",
+    "test": "jest",
+    "test-build": "npm run test -- --config jest.config.build.js",
+    "build": "rm -rf ./dist && rollup --config ./rollup.config.js",
+    "test-all": "npm run lint && npm run flow && npm run flow-coverage && npm run test",
+    "prepublishOnly": "npm run build && npm run test-build"
   },
   "repository": {
     "type": "git",
@@ -21,14 +23,14 @@
   "license": "Apache License 2.0",
   "homepage": "https://github.com/fabulator/gpx-builder#readme",
   "devDependencies": {
-    "eslint-config-socifi": "^1.5.0",
-    "flow-bin": "^0.68.0",
-    "flow-coverage-report": "^0.4.1",
+    "@socifi/eslint-config": "^1.8.1",
+    "flow-bin": "^0.71.0",
+    "flow-coverage-report": "^0.5.0",
     "flow-typed": "^2.3.0",
-    "socifi-jest-config": "^1.4.0",
-    "socifi-rollup-config": "^1.6.0"
+    "@socifi/jest-config": "^1.9.0",
+    "@socifi/rollup-config": "^1.10.0"
   },
   "dependencies": {
-    "xmlbuilder": "^9.0.7"
+    "xmlbuilder": "^10.0.0"
   }
 }

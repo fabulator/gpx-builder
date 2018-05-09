@@ -39,7 +39,7 @@ export type Meta = {
     desc?: string,
     author?: Person,
     copyright?: Copyright,
-    link?: string,
+    link?: Link,
     time?: Date,
     keywords?: string,
     bounds?: Bounds,
@@ -59,7 +59,7 @@ export type WayPoint = {
     cmt?: string,
     desc?: string,
     src?: string,
-    link?: string,
+    link?: Link,
     sym?: string,
     type?: string,
     fix?: number,
@@ -69,7 +69,7 @@ export type WayPoint = {
     pdop?: number,
     ageofdgpsdata?: number,
     dgpsid?: number,
-    extensions?: string,
+    extensions?: Extensions,
 }
 
 export type Route = {
@@ -98,7 +98,7 @@ export type Track = {
     number?: number,
     type?: string,
     extensions?: Extensions,
-    trkseg?: TrackSegment,
+    trkseg?: Array<TrackSegment>,
 }
 
 export type GPXBuildData = {

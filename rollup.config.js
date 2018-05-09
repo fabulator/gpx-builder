@@ -1,8 +1,8 @@
-import getConfig from 'socifi-rollup-config';
+import getConfig from '@socifi/rollup-config';
 import path from 'path';
 import babel from 'rollup-plugin-babel';
 import packageJson from './package.json';
-const { getBaseBabelConfig } = require('socifi-rollup-config/src/helpers');
+const { getBaseBabelConfig } = require('@socifi/rollup-config/src/helpers');
 
 const configs = getConfig(packageJson, path.resolve(__dirname, 'src'));
 
