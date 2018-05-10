@@ -12,9 +12,12 @@ script:
 after_success:
   - codecov
 sudo: required
+notifications:
+  email: false
 deploy:
   provider: npm
   email: michal@fabulator.cz
   api_key: $NPM_TOKEN
+  skip_cleanup: true
   on:
     tags: true
