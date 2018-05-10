@@ -105,7 +105,12 @@ export default class Point {
 
     // eslint-disable-next-line complexity
     getExtensionData(): ?Extensions {
-        const { hr, cad, speed, extensions } = this;
+        const {
+            hr,
+            cad,
+            speed,
+            extensions,
+        } = this;
 
         if (hr == null && cad == null && speed == null) {
             return extensions;
