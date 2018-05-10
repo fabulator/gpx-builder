@@ -44,15 +44,15 @@ export default class BaseBuilder {
     setTrackpointExtension(): this {
         this.schemaLocation = [
             ...this.schemaLocation,
-            'http://www.garmin.com/xmlschemas/TrackPointExtension/v1',
-            'http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd',
+            'http://www.garmin.com/xmlschemas/TrackPointExtension/v2',
+            'http://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd',
         ];
 
         this.data = {
             ...this.data,
             attributes: {
                 ...this.data.attributes,
-                'xmlns:gpxtpx': 'http://www.garmin.com/xmlschemas/TrackPointExtension/v1',
+                'xmlns:gpxtpx': 'http://www.garmin.com/xmlschemas/TrackPointExtension/v2',
             },
         };
         return this;

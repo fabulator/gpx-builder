@@ -2,6 +2,8 @@
 import type { Extensions, WayPoint } from './../../types';
 import Link from './Link';
 
+// @todo Create new Garmin Point that will contain all garmin extensions
+
 export default class Point {
     lat: number;
     lon: number;
@@ -25,6 +27,7 @@ export default class Point {
     dgpsid: ?number;
     hr: ?number;
     cad: ?number;
+    speed: ?number;
     extensions: ?Extensions;
 
     constructor(lat: number, lon: number, {
@@ -48,6 +51,7 @@ export default class Point {
         dgpsid,
         hr,
         cad,
+        speed,
         extensions,
     }: {
         ele?: number;
@@ -68,8 +72,9 @@ export default class Point {
         pdop?: number;
         ageofdgpsdata?: number;
         dgpsid?: number;
-        hr?: number,
-        cad?: number,
+        hr?: number;
+        cad?: number;
+        speed?: number;
         extensions?: Extensions;
     } = {}) {
         this.lat = lat;
@@ -94,14 +99,15 @@ export default class Point {
         this.dgpsid = dgpsid;
         this.hr = hr;
         this.cad = cad;
+        this.speed = speed;
         this.extensions = extensions;
     }
 
     // eslint-disable-next-line complexity
     getExtensionData(): ?Extensions {
-        const { hr, cad, extensions } = this;
+        const { hr, cad, speed, extensions } = this;
 
-        if (hr == null && cad == null) {
+        if (hr == null && cad == null && speed == null) {
             return extensions;
         }
 
@@ -114,6 +120,7 @@ export default class Point {
                 ...(extensions && extensions[trackPointExtension] ? { ...extensions[trackPointExtension] } : {}),
                 ...(hr ? { [`${extensionPrefix}:hr`]: hr } : {}),
                 ...(cad ? { [`${extensionPrefix}:cad`]: cad } : {}),
+                ...(speed ? { [`${extensionPrefix}:speed`]: speed } : {}),
             },
         };
     }
