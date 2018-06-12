@@ -1,11 +1,14 @@
-// @flow
-import type { Extensions, TrackSegment } from './../../types';
+// @flow strict
+import type { Extensions, TrackSegment } from './../../../types';
 import Point from './Point';
 
 export default class Segment {
     trkpt: Array<Point>;
     extensions: ?Extensions;
 
+    /**
+     * @see http://www.topografix.com/gpx/1/1/#type_trksegType
+     */
     constructor(trkpt: Array<Point>, extensions: ?Extensions) {
         this.trkpt = trkpt;
         this.extensions = extensions;

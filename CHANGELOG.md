@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.0] - 2018-06-12
+### Changed
+- Create new model for Garmin extensions
+- Make 1. release
+
+
 ## [0.3.0] - 2018-05-10
 ### Changed
 - Update version of garmin point extension

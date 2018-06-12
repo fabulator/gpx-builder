@@ -9,6 +9,7 @@ script:
     - npm run lint-export
     - npm run flow
     - npm run test
+    - npm run prepublishOnly
 after_success:
   - codecov
 sudo: required

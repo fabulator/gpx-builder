@@ -1,5 +1,5 @@
-// @flow
-import type { Track as TrackData, Extensions } from './../../types';
+// @flow strict
+import type { Track as TrackData, Extensions } from './../../../types';
 import Link from './Link';
 import Segment from './Segment';
 
@@ -14,6 +14,9 @@ export default class Track {
     extensions: ?Extensions;
     trkseg: ?Array<Segment>;
 
+    /**
+     * @see http://www.topografix.com/gpx/1/1/#type_trkType
+     */
     constructor(trkseg: ?Array<Segment>, {
         name,
         cmt,
@@ -50,7 +53,7 @@ export default class Track {
     }
 
     // eslint-disable-next-line complexity
-    getData(): TrackData {
+    toObject(): TrackData {
         const {
             name,
             cmt,

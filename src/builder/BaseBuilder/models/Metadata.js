@@ -1,5 +1,5 @@
-// @flow
-import type { Meta, Extensions } from './../../types';
+// @flow strict
+import type { Meta, Extensions } from './../../../types';
 import Person from './Person';
 import Copyright from './Copyright';
 import Bounds from './Bounds';
@@ -16,6 +16,9 @@ export default class Metadata {
     bounds: ?Bounds;
     extensions: ?Extensions;
 
+    /**
+     * @see http://www.topografix.com/gpx/1/1/#type_metadataType
+     */
     constructor({
         name,
         desc,

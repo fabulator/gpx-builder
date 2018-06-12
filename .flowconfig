@@ -14,12 +14,15 @@
 
 [include]
 
-
 [options]
 
-
 [version]
-0.71.0
+>=0.71.0
 
 [libs]
 
+[strict]
+unclear-type
+unsafe-getters-setters
+untyped-import
+untyped-type-import

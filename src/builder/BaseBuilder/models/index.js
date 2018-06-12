@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 import Bounds from './Bounds';
 import Copyright from './Copyright';
 import Link from './Link';

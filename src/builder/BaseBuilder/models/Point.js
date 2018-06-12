@@ -1,8 +1,28 @@
-// @flow
-import type { Extensions, WayPoint } from './../../types';
+// @flow strict
+import type { Extensions, WayPoint } from './../../../types';
 import Link from './Link';
 
-// @todo Create new Garmin Point that will contain all garmin extensions
+export type PointOptions = {
+    ele?: number,
+    time?: Date,
+    magvar?: number,
+    geoidheight?: number,
+    name?: string,
+    cmt?: string,
+    desc?: string,
+    src?: string,
+    link?: Link,
+    sym?: string,
+    type?: string,
+    fix?: number,
+    sat?: number,
+    hdop?: number,
+    vdop?: number,
+    pdop?: number,
+    ageofdgpsdata?: number,
+    dgpsid?: number,
+    extensions?: Extensions,
+}
 
 export default class Point {
     lat: number;
@@ -25,11 +45,11 @@ export default class Point {
     pdop: ?number;
     ageofdgpsdata: ?number;
     dgpsid: ?number;
-    hr: ?number;
-    cad: ?number;
-    speed: ?number;
     extensions: ?Extensions;
 
+    /**
+     * @see http://www.topografix.com/gpx/1/1/#type_wptType
+     */
     constructor(lat: number, lon: number, {
         ele,
         time,
@@ -49,34 +69,8 @@ export default class Point {
         pdop,
         ageofdgpsdata,
         dgpsid,
-        hr,
-        cad,
-        speed,
         extensions,
-    }: {
-        ele?: number;
-        time?: Date;
-        magvar?: number;
-        geoidheight?: number;
-        name?: string;
-        cmt?: string;
-        desc?: string;
-        src?: string;
-        link?: Link;
-        sym?: string;
-        type?: string;
-        fix?: number;
-        sat?: number;
-        hdop?: number;
-        vdop?: number;
-        pdop?: number;
-        ageofdgpsdata?: number;
-        dgpsid?: number;
-        hr?: number;
-        cad?: number;
-        speed?: number;
-        extensions?: Extensions;
-    } = {}) {
+    }: PointOptions = {}) {
         this.lat = lat;
         this.lon = lon;
         this.ele = ele;
@@ -97,37 +91,7 @@ export default class Point {
         this.pdop = pdop;
         this.ageofdgpsdata = ageofdgpsdata;
         this.dgpsid = dgpsid;
-        this.hr = hr;
-        this.cad = cad;
-        this.speed = speed;
         this.extensions = extensions;
-    }
-
-    // eslint-disable-next-line complexity
-    getExtensionData(): ?Extensions {
-        const {
-            hr,
-            cad,
-            speed,
-            extensions,
-        } = this;
-
-        if (hr == null && cad == null && speed == null) {
-            return extensions;
-        }
-
-        const extensionPrefix = 'gpxtpx';
-        const trackPointExtension = `${extensionPrefix}:TrackPointExtension`;
-
-        return {
-            ...(extensions || {}),
-            [trackPointExtension]: {
-                ...(extensions && extensions[trackPointExtension] ? { ...extensions[trackPointExtension] } : {}),
-                ...(hr ? { [`${extensionPrefix}:hr`]: hr } : {}),
-                ...(cad ? { [`${extensionPrefix}:cad`]: cad } : {}),
-                ...(speed ? { [`${extensionPrefix}:speed`]: speed } : {}),
-            },
-        };
     }
 
     // eslint-disable-next-line complexity
@@ -153,9 +117,8 @@ export default class Point {
             pdop,
             ageofdgpsdata,
             dgpsid,
+            extensions,
         } = this;
-
-        const extensions = this.getExtensionData();
 
         return {
             attributes: {
@@ -180,7 +143,7 @@ export default class Point {
             ...(pdop ? { pdop } : {}),
             ...(ageofdgpsdata ? { ageofdgpsdata } : {}),
             ...(dgpsid ? { dgpsid } : {}),
-            ...(extensions ? { extensions } : {}),
+            ...(extensions && Object.keys(extensions).length > 0 ? { extensions } : {}),
         };
     }
 }

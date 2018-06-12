@@ -1,6 +1,6 @@
-import { BaseBuilderModels } from './../src';
+import { GarminBuilder } from './../src';
 
-const { Point } = BaseBuilderModels;
+const { Point } = GarminBuilder.MODELS;
 
 describe('test Point', () => {
     it('create basic point with lat and lon', () => {
@@ -12,7 +12,6 @@ describe('test Point', () => {
             },
         });
     });
-
 
     it('generate extendsions with hr and cadence', () => {
         const point = new Point(1, 2, {
@@ -36,8 +35,8 @@ describe('test Point', () => {
     it('create point with custom extensions and predefined', () => {
         const point = new Point(1, 2, {
             extensions: {
-                'gpxtpx:TrackPointExtension': {
-                    'gpxtpx:speed': 50,
+                'new:TrackPointExtension': {
+                    'new:speed': 50,
                 },
             },
             cad: 10,
@@ -50,7 +49,9 @@ describe('test Point', () => {
             extensions: {
                 'gpxtpx:TrackPointExtension': {
                     'gpxtpx:cad': 10,
-                    'gpxtpx:speed': 50,
+                },
+                'new:TrackPointExtension': {
+                    'new:speed': 50,
                 },
             },
         });

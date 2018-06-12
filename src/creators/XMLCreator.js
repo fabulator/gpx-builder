@@ -1,12 +1,14 @@
-// @flow
+// @flow strict
 import builder from 'xmlbuilder';
 import type { GPXBuildData } from '../types';
 import type { CreatorInterface } from './CreatorInterface';
 
-export default class XMLCreator implements CreatorInterface {
-    settings: Object;
+type Settings = {[string]: string | boolean};
 
-    constructor(settings: Object = {}) {
+export default class XMLCreator implements CreatorInterface {
+    settings: Settings;
+
+    constructor(settings: Settings = {}) {
         this.settings = settings;
     }
 
@@ -53,7 +55,7 @@ export default class XMLCreator implements CreatorInterface {
         dir.ele(key, value);
     }
 
-    generateXmlData(dir: *, object: Object) {
+    generateXmlData(dir: *, object: *) {
         Object.keys(object).map((key) => {
             return { key, value: object[key] };
         }).forEach(({ key, value }) => {

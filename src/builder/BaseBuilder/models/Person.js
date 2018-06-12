@@ -1,5 +1,5 @@
-// @flow
-import type { Person as PersonData } from './../../types';
+// @flow strict
+import type { Person as PersonData } from './../../../types';
 import Link from './Link';
 
 export default class Person {
@@ -7,6 +7,9 @@ export default class Person {
     email: ?string;
     link: ?Link;
 
+    /**
+     * @see http://www.topografix.com/gpx/1/1/#type_personType
+     */
     constructor({
         name,
         email,

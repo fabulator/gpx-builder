@@ -1,11 +1,14 @@
-// @flow
-import type { Link as LinkData } from './../../types';
+// @flow strict
+import type { Link as LinkData } from './../../../types';
 
 export default class Link {
     href: string;
     text: ?string;
     type: ?string;
 
+    /**
+     * @see http://www.topografix.com/gpx/1/1/#type_linkType
+     */
     constructor(href: string, {
         text,
         type,

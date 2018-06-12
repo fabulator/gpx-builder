@@ -1,5 +1,5 @@
-// @flow
+// @flow strict
 import BaseBuilder from './BaseBuilder';
-import * as models from './models';
+import GarminBuilder from './GarminBuilder';
 
-export { BaseBuilder, models };
+export { BaseBuilder, GarminBuilder };

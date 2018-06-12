@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 export type Link = {
     attributes: {
         href: string,
@@ -31,7 +31,7 @@ export type Bounds = {
 }
 
 export type Extensions = {
-    [string]: {[string]: Object | string | number},
+    [string]: {[string]: string | number},
 };
 
 export type Meta = {
