@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.1] - 2018-06-27
+### Fixed
+- Metadata for Garmin builder
+
+
 ## [1.0.0] - 2018-06-12
 ### Changed
 - Create new model for Garmin extensions
