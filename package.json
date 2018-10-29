@@ -29,7 +29,7 @@
   ],
   "homepage": "https://github.com/fabulator/gpx-builder#readme",
   "devDependencies": {
-    "@socifi/eslint-config": "^1.9.0",
+    "@socifi/eslint-config": "^2.0.0",
     "flow-bin": "^0.84.0",
     "flow-coverage-report": "^0.6.0",
     "flow-typed": "^2.3.0",
