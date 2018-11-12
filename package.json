@@ -34,7 +34,7 @@
     "flow-coverage-report": "^0.6.0",
     "flow-typed": "^2.3.0",
     "@socifi/jest-config": "^1.9.0",
-    "@socifi/rollup-config": "^1.10.0"
+    "@socifi/rollup-config": "^2.0.0"
   },
   "dependencies": {
     "xmlbuilder": "^10.0.0"
