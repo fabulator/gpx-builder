@@ -1,23 +1,31 @@
-// @flow strict
-import type { Track as TrackData, Extensions } from './../../../types';
+import { Track as TrackData, Extensions } from '../../../types';
 import Link from './Link';
 import Segment from './Segment';
 
 export default class Track {
-    name: ?string;
-    cmt: ?string;
-    desc: ?string;
-    src: ?string;
-    link: ?Link;
-    number: ?number;
-    type: ?string;
-    extensions: ?Extensions;
-    trkseg: ?Array<Segment>;
+    private name: string | null;
+
+    private cmt: string | null;
+
+    private desc: string | null;
+
+    private src: string | null;
+
+    private link: Link | null;
+
+    private number: number | null;
+
+    private type: string | null;
+
+    private extensions: Extensions | null;
+
+    private trkseg: Array<Segment> | null;
 
     /**
      * @see http://www.topografix.com/gpx/1/1/#type_trkType
      */
-    constructor(trkseg: ?Array<Segment>, {
+    // eslint-disable-next-line complexity
+    public constructor(trkseg: Array<Segment> | null, {
         name,
         cmt,
         desc,
@@ -36,24 +44,24 @@ export default class Track {
         type?: string,
         extensions?: Extensions,
     } = {}) {
-        this.name = name;
-        this.cmt = cmt;
-        this.desc = desc;
-        this.src = src;
-        this.link = link;
-        this.number = number;
-        this.type = type;
-        this.extensions = extensions;
-        this.trkseg = trkseg;
+        this.name = name || null;
+        this.cmt = cmt || null;
+        this.desc = desc || null;
+        this.src = src || null;
+        this.link = link || null;
+        this.number = number || null;
+        this.type = type || null;
+        this.extensions = extensions || null;
+        this.trkseg = trkseg || null;
     }
 
-    setSegments(trkseg: ?Array<Segment>): this {
+    public setSegments(trkseg: Array<Segment> | null): this {
         this.trkseg = trkseg;
         return this;
     }
 
     // eslint-disable-next-line complexity
-    toObject(): TrackData {
+    public toObject(): TrackData {
         const {
             name,
             cmt,

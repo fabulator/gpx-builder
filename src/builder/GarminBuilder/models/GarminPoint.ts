@@ -1,9 +1,6 @@
-// @flow strict
-import type { PointOptions } from './../../BaseBuilder/models/Point';
-import Point from './../../BaseBuilder/models/Point';
+import Point, { PointOptions } from '../../BaseBuilder/models/Point';
 
-type GarminPointOptions = {
-    ...PointOptions,
+interface GarminPointOptions extends PointOptions {
     hr?: number,
     cad?: number,
     speed?: number,
@@ -21,7 +18,7 @@ export default class GarminPoint extends Point {
      * @see https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd
      */
     // eslint-disable-next-line complexity
-    constructor(lat: number, lon: number, options: GarminPointOptions = {}) {
+    public constructor(lat: number, lon: number, options: GarminPointOptions = {}) {
         super(lat, lon, options);
         const {
             hr, cad, speed, atemp, wtemp, depth, course, bearing,

@@ -1,13 +1,13 @@
-// @flow strict
-import type { GPXBuildData } from './../../types';
-import BaseBuilder from './../BaseBuilder';
+import { GPXBuildData } from '../../types';
+import BaseBuilder from '../BaseBuilder';
 import GarminPoint from './models/GarminPoint';
 
 export default class GarminBuilder extends BaseBuilder {
-    data: GPXBuildData;
-    schemaLocation: Array<string>;
+    protected data: GPXBuildData;
 
-    static MODELS = {
+    protected schemaLocation: Array<string>;
+
+    public static MODELS = {
         ...BaseBuilder.MODELS,
         Point: GarminPoint,
     };
@@ -15,9 +15,10 @@ export default class GarminBuilder extends BaseBuilder {
     /**
      * Garmin builder include extension for speed, hear rate, cadence, ...
      */
-    constructor() {
+    public constructor() {
         super();
         this.schemaLocation = [
+            // @ts-ignore
             ...this.schemaLocation,
             'http://www.garmin.com/xmlschemas/TrackPointExtension/v1',
             'http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd',
@@ -25,8 +26,10 @@ export default class GarminBuilder extends BaseBuilder {
             'http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd',
         ];
         this.data = {
+            // @ts-ignore
             ...this.data,
             attributes: {
+                // @ts-ignore
                 ...this.data.attributes,
                 'xmlns:gpxtpx': 'http://www.garmin.com/xmlschemas/TrackPointExtension/v1',
                 'xmlns:gpxx': 'http://www.garmin.com/xmlschemas/GpxExtensions/v3',

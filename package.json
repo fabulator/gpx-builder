@@ -1,19 +1,20 @@
 {
   "name": "gpx-builder",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Builder of GPX files",
-  "main": "./dist/index.js",
+  "main": "dist/index.js",
+  "jsnext:main": "dist/index.esm.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "lint": "eslint --ext .js ./src ./tests",
-    "lint-export": "npm run lint -- -o ./tests_results/checkstyle/js-checkstyle.xml -f checkstyle",
-    "flow": "flow",
-    "flow-coverage": "flow-coverage-report -f \"node node_modules/flow-bin/vendor/flow\" -i \"./src/**/*.js*\" -t html -t text -t json -o tests_results/coverage/flow",
-    "flow-init": "flow-typed install jest@22.x xmlbuilder@x.x",
+    "lint": "eslint --ext .ts ./src ./tests",
+    "lint:export": "npm run lint -- -o ./tests_results/checkstyle/js-checkstyle.xml -f checkstyle",
+    "tsc": "tsc",
     "test": "jest",
-    "test-build": "npm run test -- --config jest.config.build.js",
-    "build": "rm -rf ./dist && rollup --config ./rollup.config.js",
-    "test-all": "npm run lint && npm run flow && npm run test",
-    "prepublishOnly": "npm run build && npm run test-build"
+    "test:build": "npm run test -- --config jest.config.build.js",
+    "build": "rollup --config ./rollup.config.js",
+    "test:all": "npm run lint && npm run tsc && npm run test",
+    "prepublishOnly": "npm run build && npm run tsc && npm run test:build"
   },
   "repository": {
     "type": "git",
@@ -29,14 +30,13 @@
   ],
   "homepage": "https://github.com/fabulator/gpx-builder#readme",
   "devDependencies": {
-    "@socifi/eslint-config": "^1.9.0",
-    "flow-bin": "^0.86.0",
-    "flow-coverage-report": "^0.6.0",
-    "flow-typed": "^2.3.0",
-    "@socifi/jest-config": "^1.9.0",
-    "@socifi/rollup-config": "^1.10.0"
+    "@socifi/eslint-config": "^2.0.1",
+    "@socifi/jest-config": "^2.1.0",
+    "@socifi/rollup-config": "^2.0.1",
+    "@socifi/babel-config": "^0.6.0"
   },
   "dependencies": {
-    "xmlbuilder": "^10.0.0"
+    "@types/xmlbuilder": "0.0.34",
+    "xmlbuilder": "^10.1.1"
   }
 }

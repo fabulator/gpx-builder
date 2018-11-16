@@ -1,18 +1,20 @@
-// @flow strict
-import type { Copyright as CopyrightData } from './../../../types';
+import { Copyright as CopyrightData } from '../../../types';
 
 export default class Copyright {
-    author: string;
-    year: ?number;
-    license: ?string;
+    private author: string;
 
+    private year: number | null;
+
+    private license: string | null;
+
+    // eslint-disable-next-line jsdoc/check-param-names
     /**
      * @param author - Owner of licence
      * @param year - Year of licence
      * @param license - Type of licence
      * @see http://www.topografix.com/gpx/1/1/#type_copyrightType
      */
-    constructor(author: string, {
+    public constructor(author: string, {
         year,
         license,
     }: {
@@ -20,11 +22,11 @@ export default class Copyright {
         license?: string,
     }) {
         this.author = author;
-        this.year = year;
-        this.license = license;
+        this.year = year || null;
+        this.license = license || null;
     }
 
-    toObject(): CopyrightData {
+    public toObject(): CopyrightData {
         const {
             author,
             year,

@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.0.0] - 2018-11-16
+### Changed
+- Migrate to typescript
+
+
 ## [1.0.1] - 2018-06-27
 ### Fixed
 - Metadata for Garmin builder

@@ -1,16 +1,17 @@
-// @flow strict
-import type { Person as PersonData } from './../../../types';
+import { Person as PersonData } from '../../../types';
 import Link from './Link';
 
 export default class Person {
-    name: ?string;
-    email: ?string;
-    link: ?Link;
+    private name: string | null;
+
+    private email: string | null;
+
+    private link: Link | null;
 
     /**
      * @see http://www.topografix.com/gpx/1/1/#type_personType
      */
-    constructor({
+    public constructor({
         name,
         email,
         link,
@@ -19,12 +20,12 @@ export default class Person {
         email?: string,
         link?: Link,
     }) {
-        this.name = name;
-        this.email = email;
-        this.link = link;
+        this.name = name || null;
+        this.email = email || null;
+        this.link = link || null;
     }
 
-    toObject(): PersonData {
+    public toObject(): PersonData {
         const {
             name,
             email,

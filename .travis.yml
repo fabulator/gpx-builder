@@ -1,20 +1,18 @@
 language: node_js
 node_js:
-    - 9
+    - 10
 install:
-    - npm install
+    - npm ci
     - npm install -g codecov
-    - npm run flow-init
 script:
-    - npm run lint-export
-    - npm run flow
+    - npm run lint
     - npm run test
-    - npm run prepublishOnly
+    - npm run tsc
 after_success:
   - codecov
-sudo: required
 notifications:
   email: false
+sudo: required
 deploy:
   provider: npm
   email: michal@fabulator.cz

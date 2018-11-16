@@ -1,17 +1,16 @@
-// @flow strict
 export type Link = {
     attributes: {
         href: string,
     },
     text?: string,
     type?: string,
-}
+};
 
 export type Person = {
     name?: string,
     email?: string,
     link?: Link,
-}
+};
 
 export type Copyright = {
     attributes: {
@@ -19,7 +18,7 @@ export type Copyright = {
     },
     year?: number,
     license?: string,
-}
+};
 
 export type Bounds = {
     attributes: {
@@ -28,10 +27,10 @@ export type Bounds = {
         maxlat: number,
         maxlon: number,
     },
-}
+};
 
 export type Extensions = {
-    [string]: {[string]: string | number},
+    [key: string]: {[key: string]: string | number},
 };
 
 export type Meta = {
@@ -44,7 +43,7 @@ export type Meta = {
     keywords?: string,
     bounds?: Bounds,
     extensions?: Extensions,
-}
+};
 
 export type WayPoint = {
     attributes: {
@@ -70,7 +69,7 @@ export type WayPoint = {
     ageofdgpsdata?: number,
     dgpsid?: number,
     extensions?: Extensions,
-}
+};
 
 export type Route = {
     name?: string,
@@ -82,12 +81,12 @@ export type Route = {
     type?: string,
     extensions?: Extensions,
     rtept?: Array<WayPoint>,
-}
+};
 
 export type TrackSegment = {
     trkpt: Array<WayPoint>,
     extensions?: Extensions,
-}
+};
 
 export type Track = {
     name?: string,
@@ -99,16 +98,15 @@ export type Track = {
     type?: string,
     extensions?: Extensions,
     trkseg?: Array<TrackSegment>,
-}
+};
 
 export type GPXBuildData = {
     attributes?: {
-        creator?: string,
-        [string]: string,
+        [key: string]: string,
     },
     metadata?: Meta,
     wpt?: Array<WayPoint>,
     rte?: Array<Route>,
     trk?: Array<Track>,
     extensions?: Extensions,
-}
+};

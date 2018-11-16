@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "*",
+        "src/*",
+        "tests/*"
+      ]
+    },
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "module": "commonjs",
+    "target": "esnext",
+    "strict": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

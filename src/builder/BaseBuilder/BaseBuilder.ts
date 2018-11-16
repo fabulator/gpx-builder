@@ -1,16 +1,21 @@
 /* eslint-disable import/no-duplicates */
-// @flow strict
-import type { GPXBuildData, Route, Extensions } from './../../types';
-import { Track, Metadata, Segment, Point } from './models';
+import { GPXBuildData, Route, Extensions } from '../../types';
+import {
+    Track,
+    Metadata,
+    Segment,
+    Point,
+} from './models';
 import * as models from './models';
 
 export default class BaseBuilder {
-    data: GPXBuildData;
-    schemaLocation: Array<string>;
+    protected data: GPXBuildData;
 
-    static MODELS = models;
+    protected schemaLocation: Array<string>;
 
-    constructor() {
+    public static MODELS = models;
+
+    public constructor() {
         this.data = {};
         this.schemaLocation = ['http://www.topografix.com/GPX/1/1', 'http://www.topografix.com/GPX/1/1/gpx.xsd'];
     }
@@ -21,7 +26,7 @@ export default class BaseBuilder {
      * @param metadata - Metadata object
      * @returns {BaseBuilder} self
      */
-    setMetadata(metadata: Metadata): this {
+    public setMetadata(metadata: Metadata): this {
         this.data.metadata = metadata.toObject();
         return this;
     }
@@ -32,7 +37,7 @@ export default class BaseBuilder {
      * @param waypoints - Points objects
      * @returns {BaseBuilder} self
      */
-    setWayPoints(waypoints: Array<Point>): this {
+    public setWayPoints(waypoints: Array<Point>): this {
         this.data.wpt = waypoints.map(point => point.toObject());
         return this;
     }
@@ -43,7 +48,7 @@ export default class BaseBuilder {
      * @param routes - List of routes
      * @returns {BaseBuilder} self
      */
-    setRoutes(routes: Array<Route>): this {
+    public setRoutes(routes: Array<Route>): this {
         this.data.rte = routes;
         return this;
     }
@@ -54,7 +59,7 @@ export default class BaseBuilder {
      * @param tracks - List of tracks
      * @returns {BaseBuilder} self
      */
-    setTracks(tracks: Array<Track>): this {
+    public setTracks(tracks: Array<Track>): this {
         this.data.trk = tracks.map(track => track.toObject());
         return this;
     }
@@ -65,7 +70,7 @@ export default class BaseBuilder {
      * @param extensions - Extensions
      * @returns {BaseBuilder} self
      */
-    setExtensions(extensions: Extensions): this {
+    public setExtensions(extensions: Extensions): this {
         this.data.extensions = extensions;
         return this;
     }
@@ -76,7 +81,7 @@ export default class BaseBuilder {
      * @param points - list of Points
      * @returns {BaseBuilder} self
      */
-    setSegmentPoints(points: Array<Point>): this {
+    public setSegmentPoints(points: Array<Point>): this {
         this.setTracks([new Track([new Segment(points)])]);
         return this;
     }
@@ -86,7 +91,7 @@ export default class BaseBuilder {
      *
      * @returns {GPXBuildData}
      */
-    toObject(): GPXBuildData {
+    public toObject(): GPXBuildData {
         return {
             ...this.data,
             attributes: {

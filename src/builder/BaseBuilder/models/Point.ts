@@ -1,8 +1,7 @@
-// @flow strict
-import type { Extensions, WayPoint } from './../../../types';
+import { Extensions, WayPoint } from '../../../types';
 import Link from './Link';
 
-export type PointOptions = {
+export interface PointOptions {
     ele?: number,
     time?: Date,
     magvar?: number,
@@ -25,32 +24,54 @@ export type PointOptions = {
 }
 
 export default class Point {
-    lat: number;
-    lon: number;
-    ele: ?number;
-    time: ?Date;
-    magvar: ?number;
-    geoidheight: ?number;
-    name: ?string;
-    cmt: ?string;
-    desc: ?string;
-    src: ?string;
-    link: ?Link;
-    sym: ?string;
-    type: ?string;
-    fix: ?number;
-    sat: ?number;
-    hdop: ?number;
-    vdop: ?number;
-    pdop: ?number;
-    ageofdgpsdata: ?number;
-    dgpsid: ?number;
-    extensions: ?Extensions;
+    protected lat: number;
+
+    protected lon: number;
+
+    protected ele: number | null;
+
+    protected time: Date | null;
+
+    protected magvar: number | null;
+
+    protected geoidheight: number | null;
+
+    protected name: string | null;
+
+    protected cmt: string | null;
+
+    protected desc: string | null;
+
+    protected src: string | null;
+
+    protected link: Link | null;
+
+    protected sym: string | null;
+
+    protected type: string | null;
+
+    protected fix: number | null;
+
+    protected sat: number | null;
+
+    protected hdop: number | null;
+
+    protected vdop: number | null;
+
+    protected pdop: number | null;
+
+    protected ageofdgpsdata: number | null;
+
+    protected dgpsid: number | null;
+
+    protected extensions: Extensions | null;
+
 
     /**
      * @see http://www.topografix.com/gpx/1/1/#type_wptType
      */
-    constructor(lat: number, lon: number, {
+    // eslint-disable-next-line complexity
+    public constructor(lat: number, lon: number, {
         ele,
         time,
         magvar,
@@ -73,29 +94,29 @@ export default class Point {
     }: PointOptions = {}) {
         this.lat = lat;
         this.lon = lon;
-        this.ele = ele;
-        this.time = time;
-        this.magvar = magvar;
-        this.geoidheight = geoidheight;
-        this.name = name;
-        this.cmt = cmt;
-        this.desc = desc;
-        this.src = src;
-        this.link = link;
-        this.sym = sym;
-        this.type = type;
-        this.fix = fix;
-        this.sat = sat;
-        this.hdop = hdop;
-        this.vdop = vdop;
-        this.pdop = pdop;
-        this.ageofdgpsdata = ageofdgpsdata;
-        this.dgpsid = dgpsid;
-        this.extensions = extensions;
+        this.ele = ele || null;
+        this.time = time || null;
+        this.magvar = magvar || null;
+        this.geoidheight = geoidheight || null;
+        this.name = name || null;
+        this.cmt = cmt || null;
+        this.desc = desc || null;
+        this.src = src || null;
+        this.link = link || null;
+        this.sym = sym || null;
+        this.type = type || null;
+        this.fix = fix || null;
+        this.sat = sat || null;
+        this.hdop = hdop || null;
+        this.vdop = vdop || null;
+        this.pdop = pdop || null;
+        this.ageofdgpsdata = ageofdgpsdata || null;
+        this.dgpsid = dgpsid || null;
+        this.extensions = extensions || null;
     }
 
     // eslint-disable-next-line complexity
-    toObject(): WayPoint {
+    public toObject(): WayPoint {
         const {
             lat,
             lon,

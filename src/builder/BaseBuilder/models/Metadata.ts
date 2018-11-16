@@ -1,25 +1,34 @@
-// @flow strict
-import type { Meta, Extensions } from './../../../types';
+import { Meta, Extensions } from '../../../types';
 import Person from './Person';
 import Copyright from './Copyright';
 import Bounds from './Bounds';
 import Link from './Link';
 
 export default class Metadata {
-    name: ?string;
-    desc: ?string;
-    author: ?Person;
-    copyright: ?Copyright;
-    link: ?Link;
-    time: ?Date;
-    keywords: ?string;
-    bounds: ?Bounds;
-    extensions: ?Extensions;
+    private name: string | null;
+
+    private desc: string | null;
+
+    private author: Person | null;
+
+    private copyright: Copyright | null;
+
+    private link: Link | null;
+
+    private time: Date | null;
+
+    private keywords: string | null;
+
+    private bounds: Bounds | null;
+
+    private extensions: Extensions | null;
+
 
     /**
      * @see http://www.topografix.com/gpx/1/1/#type_metadataType
      */
-    constructor({
+    // eslint-disable-next-line
+    public constructor({
         name,
         desc,
         author,
@@ -30,29 +39,29 @@ export default class Metadata {
         bounds,
         extensions,
     }: {
-        name?: string;
-        desc?: string;
-        author?: Person;
-        copyright?: Copyright;
-        link?: Link;
-        time?: Date;
-        keywords?: string;
-        bounds?: Bounds;
-        extensions?: Extensions;
+        name?: string,
+        desc?: string,
+        author?: Person,
+        copyright?: Copyright,
+        link?: Link,
+        time?: Date,
+        keywords?: string,
+        bounds?: Bounds,
+        extensions?: Extensions,
     }) {
-        this.name = name;
-        this.desc = desc;
-        this.author = author;
-        this.copyright = copyright;
-        this.link = link;
-        this.time = time;
-        this.keywords = keywords;
-        this.bounds = bounds;
-        this.extensions = extensions;
+        this.name = name || null;
+        this.desc = desc || null;
+        this.author = author || null;
+        this.copyright = copyright || null;
+        this.link = link || null;
+        this.time = time || null;
+        this.keywords = keywords || null;
+        this.bounds = bounds || null;
+        this.extensions = extensions || null;
     }
 
     // eslint-disable-next-line complexity
-    toObject(): Meta {
+    public toObject(): Meta {
         const {
             name,
             desc,

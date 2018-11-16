@@ -1,25 +1,26 @@
-// @flow strict
-import type { Extensions, TrackSegment } from './../../../types';
+import { Extensions, TrackSegment } from '../../../types';
 import Point from './Point';
 
 export default class Segment {
-    trkpt: Array<Point>;
-    extensions: ?Extensions;
+    private trkpt: Array<Point>;
+
+    private extensions: Extensions | null;
+
 
     /**
      * @see http://www.topografix.com/gpx/1/1/#type_trksegType
      */
-    constructor(trkpt: Array<Point>, extensions: ?Extensions) {
+    public constructor(trkpt: Array<Point>, extensions: Extensions | null = null) {
         this.trkpt = trkpt;
-        this.extensions = extensions;
+        this.extensions = extensions || null;
     }
 
-    setPoints(trkpt: Array<Point>): this {
+    public setPoints(trkpt: Array<Point>): this {
         this.trkpt = trkpt;
         return this;
     }
 
-    toObject(): TrackSegment {
+    public toObject(): TrackSegment {
         const {
             trkpt,
             extensions,

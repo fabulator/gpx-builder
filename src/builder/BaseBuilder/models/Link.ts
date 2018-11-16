@@ -1,15 +1,16 @@
-// @flow strict
-import type { Link as LinkData } from './../../../types';
+import { Link as LinkData } from '../../../types';
 
 export default class Link {
-    href: string;
-    text: ?string;
-    type: ?string;
+    private href: string;
+
+    private text: string | null;
+
+    private type: string | null;
 
     /**
      * @see http://www.topografix.com/gpx/1/1/#type_linkType
      */
-    constructor(href: string, {
+    public constructor(href: string, {
         text,
         type,
     }: {
@@ -17,11 +18,11 @@ export default class Link {
         type?: string,
     }) {
         this.href = href;
-        this.text = text;
-        this.type = type;
+        this.text = text || null;
+        this.type = type || null;
     }
 
-    toObject(): LinkData {
+    public toObject(): LinkData {
         const {
             href,
             text,

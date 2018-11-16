@@ -1,23 +1,25 @@
-// @flow strict
-import type { Bounds as BoundsData } from './../../../types';
+import { Bounds as BoundsData } from '../../../types';
 
 export default class Bounds {
-    minlat: number;
-    minlon: number;
-    maxlat: number;
-    maxlon: number;
+    private minlat: number;
+
+    private minlon: number;
+
+    private maxlat: number;
+
+    private maxlon: number;
 
     /**
      * @see http://www.topografix.com/gpx/1/1/#type_boundsType
      */
-    constructor(minlat: number, minlon: number, maxlat: number, maxlon: number) {
+    public constructor(minlat: number, minlon: number, maxlat: number, maxlon: number) {
         this.minlat = minlat;
         this.minlon = minlon;
         this.maxlat = maxlat;
         this.maxlon = maxlon;
     }
 
-    toObject(): BoundsData {
+    public toObject(): BoundsData {
         const {
             minlat,
             minlon,

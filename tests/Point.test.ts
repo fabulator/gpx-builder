@@ -1,4 +1,4 @@
-import { GarminBuilder } from './../src';
+import { GarminBuilder } from '../src';
 
 const { Point } = GarminBuilder.MODELS;
 

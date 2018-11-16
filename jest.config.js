@@ -1,1 +1,3 @@
-module.exports = require('@socifi/jest-config')();
+const { setupTestFrameworkScriptFile, ...config } = require('@socifi/jest-config')();
+
+module.exports = { ...config, transform: { '.*': 'babel-jest' } };
