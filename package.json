@@ -32,7 +32,7 @@
   "devDependencies": {
     "@socifi/eslint-config": "^2.0.1",
     "@socifi/jest-config": "^2.2.0",
-    "@socifi/rollup-config": "^2.0.1",
+    "@socifi/rollup-config": "^2.1.0",
     "@socifi/babel-config": "^0.6.0"
   },
   "dependencies": {
