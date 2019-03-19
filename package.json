@@ -30,7 +30,7 @@
   ],
   "homepage": "https://github.com/fabulator/gpx-builder#readme",
   "devDependencies": {
-    "@socifi/eslint-config": "^2.0.1",
+    "@socifi/eslint-config": "^2.7.1",
     "@socifi/jest-config": "^2.3.1",
     "@socifi/rollup-config": "^2.1.0",
     "@socifi/babel-config": "^0.6.0"
