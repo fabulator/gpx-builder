@@ -19,13 +19,13 @@ export default class Track {
 
     private extensions: Extensions | null;
 
-    private trkseg: Array<Segment> | null;
+    private trkseg: Segment[] | null;
 
     /**
      * @see http://www.topografix.com/gpx/1/1/#type_trkType
      */
     // eslint-disable-next-line complexity
-    public constructor(trkseg: Array<Segment> | null, {
+    public constructor(trkseg: Segment[] | null, {
         name,
         cmt,
         desc,
@@ -55,7 +55,7 @@ export default class Track {
         this.trkseg = trkseg || null;
     }
 
-    public setSegments(trkseg: Array<Segment> | null): this {
+    public setSegments(trkseg: Segment[] | null): this {
         this.trkseg = trkseg;
         return this;
     }

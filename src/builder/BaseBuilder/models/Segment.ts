@@ -2,7 +2,7 @@ import { Extensions, TrackSegment } from '../../../types';
 import Point from './Point';
 
 export default class Segment {
-    private trkpt: Array<Point>;
+    private trkpt: Point[];
 
     private extensions: Extensions | null;
 
@@ -10,12 +10,12 @@ export default class Segment {
     /**
      * @see http://www.topografix.com/gpx/1/1/#type_trksegType
      */
-    public constructor(trkpt: Array<Point>, extensions: Extensions | null = null) {
+    public constructor(trkpt: Point[], extensions: Extensions | null = null) {
         this.trkpt = trkpt;
         this.extensions = extensions || null;
     }
 
-    public setPoints(trkpt: Array<Point>): this {
+    public setPoints(trkpt: Point[]): this {
         this.trkpt = trkpt;
         return this;
     }

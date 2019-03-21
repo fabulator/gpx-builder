@@ -1,39 +1,39 @@
-export type Link = {
+export interface Link {
     attributes: {
         href: string,
     },
     text?: string,
     type?: string,
-};
+}
 
-export type Person = {
+export interface Person {
     name?: string,
     email?: string,
     link?: Link,
-};
+}
 
-export type Copyright = {
+export interface Copyright {
     attributes: {
         author: string,
     },
     year?: number,
     license?: string,
-};
+}
 
-export type Bounds = {
+export interface Bounds {
     attributes: {
         minlat: number,
         minlon: number,
         maxlat: number,
         maxlon: number,
     },
-};
+}
 
-export type Extensions = {
+export interface Extensions {
     [key: string]: {[key: string]: string | number},
-};
+}
 
-export type Meta = {
+export interface Meta {
     name?: string,
     desc?: string,
     author?: Person,
@@ -43,9 +43,9 @@ export type Meta = {
     keywords?: string,
     bounds?: Bounds,
     extensions?: Extensions,
-};
+}
 
-export type WayPoint = {
+export interface WayPoint {
     attributes: {
         lat: number,
         lon: number,
@@ -69,9 +69,9 @@ export type WayPoint = {
     ageofdgpsdata?: number,
     dgpsid?: number,
     extensions?: Extensions,
-};
+}
 
-export type Route = {
+export interface Route {
     name?: string,
     cmt?: string,
     desc?: string,
@@ -80,15 +80,15 @@ export type Route = {
     number?: number,
     type?: string,
     extensions?: Extensions,
-    rtept?: Array<WayPoint>,
-};
+    rtept?: WayPoint[],
+}
 
-export type TrackSegment = {
-    trkpt: Array<WayPoint>,
+export interface TrackSegment {
+    trkpt: WayPoint[],
     extensions?: Extensions,
-};
+}
 
-export type Track = {
+export interface Track {
     name?: string,
     cmt?: string,
     desc?: string,
@@ -97,16 +97,16 @@ export type Track = {
     number?: number,
     type?: string,
     extensions?: Extensions,
-    trkseg?: Array<TrackSegment>,
-};
+    trkseg?: TrackSegment[],
+}
 
-export type GPXBuildData = {
+export interface GPXBuildData {
     attributes?: {
         [key: string]: string,
     },
     metadata?: Meta,
-    wpt?: Array<WayPoint>,
-    rte?: Array<Route>,
-    trk?: Array<Track>,
+    wpt?: WayPoint[],
+    rte?: Route[],
+    trk?: Track[],
     extensions?: Extensions,
-};
+}

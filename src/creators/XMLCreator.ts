@@ -2,7 +2,7 @@ import { create } from 'xmlbuilder';
 import { GPXBuildData } from '../types';
 import { CreatorInterface } from './CreatorInterface';
 
-type Settings = {[key: string]: string | boolean};
+interface Settings {[key: string]: string | boolean}
 
 export default class XMLCreator implements CreatorInterface {
     private settings: Settings;

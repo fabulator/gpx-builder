@@ -11,7 +11,7 @@ import * as models from './models';
 export default class BaseBuilder {
     protected data: GPXBuildData;
 
-    protected schemaLocation: Array<string>;
+    protected schemaLocation: string[];
 
     public static MODELS = models;
 
@@ -37,7 +37,7 @@ export default class BaseBuilder {
      * @param waypoints - Points objects
      * @returns {BaseBuilder} self
      */
-    public setWayPoints(waypoints: Array<Point>): this {
+    public setWayPoints(waypoints: Point[]): this {
         this.data.wpt = waypoints.map(point => point.toObject());
         return this;
     }
@@ -48,7 +48,7 @@ export default class BaseBuilder {
      * @param routes - List of routes
      * @returns {BaseBuilder} self
      */
-    public setRoutes(routes: Array<Route>): this {
+    public setRoutes(routes: Route[]): this {
         this.data.rte = routes;
         return this;
     }
@@ -59,7 +59,7 @@ export default class BaseBuilder {
      * @param tracks - List of tracks
      * @returns {BaseBuilder} self
      */
-    public setTracks(tracks: Array<Track>): this {
+    public setTracks(tracks: Track[]): this {
         this.data.trk = tracks.map(track => track.toObject());
         return this;
     }
@@ -81,7 +81,7 @@ export default class BaseBuilder {
      * @param points - list of Points
      * @returns {BaseBuilder} self
      */
-    public setSegmentPoints(points: Array<Point>): this {
+    public setSegmentPoints(points: Point[]): this {
         this.setTracks([new Track([new Segment(points)])]);
         return this;
     }

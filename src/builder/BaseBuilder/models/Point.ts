@@ -70,7 +70,7 @@ export default class Point {
     /**
      * @see http://www.topografix.com/gpx/1/1/#type_wptType
      */
-    // eslint-disable-next-line complexity
+    // eslint-disable-next-line complexity, sonarjs/cognitive-complexity
     public constructor(lat: number, lon: number, {
         ele,
         time,
@@ -115,7 +115,7 @@ export default class Point {
         this.extensions = extensions || null;
     }
 
-    // eslint-disable-next-line complexity
+    // eslint-disable-next-line complexity, sonarjs/cognitive-complexity
     public toObject(): WayPoint {
         const {
             lat,
