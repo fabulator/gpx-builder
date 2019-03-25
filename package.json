@@ -37,6 +37,6 @@
   },
   "dependencies": {
     "@types/xmlbuilder": "^0.0.34",
-    "xmlbuilder": "^11.0.0"
+    "xmlbuilder": "^11.0.1"
   }
 }
