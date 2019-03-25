@@ -36,7 +36,7 @@
     "@socifi/babel-config": "^0.6.1"
   },
   "dependencies": {
-    "@types/xmlbuilder": "^0.0.34",
+    "@types/xmlbuilder": "^0.0.35",
     "xmlbuilder": "^11.0.0"
   }
 }
