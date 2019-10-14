@@ -34,7 +34,7 @@
     "@socifi/eslint-config": "^2.8.0",
     "@socifi/jest-config": "^2.3.1",
     "@socifi/rollup-config": "^2.1.0",
-    "core-js": "^3.3.1"
+    "core-js": "^3.3.2"
   },
   "dependencies": {
     "@types/xmlbuilder": "^11.0.1",
