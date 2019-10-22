@@ -83,7 +83,7 @@ export default class Track {
             ...(number ? { number } : {}),
             ...(type ? { type } : {}),
             ...(extensions ? { extensions } : {}),
-            ...(trkseg ? { trkseg: trkseg.map(segment => segment.toObject()) } : {}),
+            ...(trkseg ? { trkseg: trkseg.map((segment) => segment.toObject()) } : {}),
         };
     }
 }

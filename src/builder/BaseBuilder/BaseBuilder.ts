@@ -38,7 +38,7 @@ export default class BaseBuilder {
      * @returns {BaseBuilder} self
      */
     public setWayPoints(waypoints: Point[]): this {
-        this.data.wpt = waypoints.map(point => point.toObject());
+        this.data.wpt = waypoints.map((point) => point.toObject());
         return this;
     }
 
@@ -60,7 +60,7 @@ export default class BaseBuilder {
      * @returns {BaseBuilder} self
      */
     public setTracks(tracks: Track[]): this {
-        this.data.trk = tracks.map(track => track.toObject());
+        this.data.trk = tracks.map((track) => track.toObject());
         return this;
     }
 

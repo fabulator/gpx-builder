@@ -1,22 +1,18 @@
 language: node_js
 node_js:
-    - 10
+    - "12"
 install:
     - npm ci
-    - npm install -g codecov
 script:
     - npm run lint
     - npm run test
     - npm run tsc
+    - npm run build
+    - npm run test:build
 after_success:
-  - codecov
+    - npm install -g codecov
+    - codecov
+    - npm run release
 notifications:
-  email: false
+    email: false
 sudo: required
-deploy:
-  provider: npm
-  email: michal@fabulator.cz
-  api_key: $NPM_TOKEN
-  skip_cleanup: true
-  on:
-    tags: true

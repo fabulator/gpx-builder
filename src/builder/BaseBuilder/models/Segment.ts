@@ -27,7 +27,7 @@ export default class Segment {
         } = this;
 
         return {
-            trkpt: trkpt.map(point => point.toObject()),
+            trkpt: trkpt.map((point) => point.toObject()),
             ...(extensions ? { extensions } : {}),
         };
     }

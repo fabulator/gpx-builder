@@ -14,14 +14,15 @@
     "test:build": "npm run test -- --config jest.config.build.js",
     "build": "rollup --config ./rollup.config.js",
     "test:all": "npm run lint && npm run tsc && npm run test",
-    "prepublishOnly": "npm run build && npm run tsc && npm run test:build"
+    "prepublishOnly": "npm run build && npm run tsc && npm run test:build",
+    "release": "semantic-release"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/fabulator/gpx-builder.git"
   },
   "author": "Michal Ozogán <michal@ozogan.eu>",
-  "license": "Apache License 2.0",
+  "license": "Apache-2.0",
   "keywords": [
     "gpx",
     "garmin",
@@ -30,14 +31,14 @@
   ],
   "homepage": "https://github.com/fabulator/gpx-builder#readme",
   "devDependencies": {
-    "@socifi/babel-config": "^0.7.0",
-    "@socifi/eslint-config": "^2.8.0",
-    "@socifi/jest-config": "^2.3.1",
-    "@socifi/rollup-config": "^2.1.0",
-    "core-js": "^3.3.2"
+    "@socifi/babel-config": "^1.0.0",
+    "@socifi/commitlint-config": "^1.1.0",
+    "@socifi/eslint-config": "^2.10.0",
+    "@socifi/jest-config": "^2.4.1",
+    "@socifi/rollup-config": "^2.2.1",
+    "semantic-release-config-fabulator": "^1.3.2"
   },
   "dependencies": {
-    "@types/xmlbuilder": "^11.0.1",
     "xmlbuilder": "^13.0.2"
   }
 }

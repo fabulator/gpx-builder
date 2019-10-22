@@ -7,7 +7,6 @@ export default class Copyright {
 
     private license: string | null;
 
-    // eslint-disable-next-line jsdoc/check-param-names
     /**
      * @param author - Owner of licence
      * @param year - Year of licence
