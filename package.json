@@ -35,7 +35,7 @@
     "@socifi/commitlint-config": "^1.1.0",
     "@socifi/eslint-config": "^2.10.0",
     "@socifi/jest-config": "^2.4.1",
-    "@socifi/rollup-config": "^2.2.1",
+    "@socifi/rollup-config": "^2.2.2",
     "semantic-release-config-fabulator": "^1.3.2"
   },
   "dependencies": {
