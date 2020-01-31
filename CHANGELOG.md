@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.2.1] 2020-01-31
+### Fixed
+- [0e2598c](https://github.com/fabulator/gpx-builder/commit/0e2598c1de4c995319d50e37617fbdba947d84da) Add missing babel runtime dependency
+
 ## [2.2.0] 2019-10-24
 ### Changed
 - [8fc4e6c](https://github.com/fabulator/gpx-builder/commit/8fc4e6c4f17da3cee9e101191933093d1c114447) Update dev dependency @socifi/rollup-config to ^2.2.2
