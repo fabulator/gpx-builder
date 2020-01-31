@@ -39,6 +39,7 @@
     "semantic-release-config-fabulator": "^1.3.2"
   },
   "dependencies": {
+    "@babel/runtime": "^7.8.4",
     "xmlbuilder": "^13.0.2"
   }
 }
