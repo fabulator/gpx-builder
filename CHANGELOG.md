@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.3.0] 2020-03-06
+### Changed
+- [231e219](https://github.com/fabulator/gpx-builder/commit/231e219bcf79efed141fbeafc496b1c40665cde9) Update dependency @babel/runtime to v7.8.7
+- [b51070b](https://github.com/fabulator/gpx-builder/commit/b51070bd45cfef2a3410246c84c5180584864686) Update dev dependency @socifi/eslint-config to v2.10.2 
+
 ## [2.2.1] 2020-01-31
 ### Fixed
 - [0e2598c](https://github.com/fabulator/gpx-builder/commit/0e2598c1de4c995319d50e37617fbdba947d84da) Add missing babel runtime dependency
