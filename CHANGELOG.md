@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [3.2.0] 2020-06-01
+### Changed
+- [11af3b4](https://github.com/fabulator/gpx-builder/commit/11af3b47b0bc1d09ad9531b239837ffca9e6bee2) Update dependency @babel/runtime to v7.10.2
+
 ## [3.1.0] 2020-05-29
 ### Changed
 - [473fae8](https://github.com/fabulator/gpx-builder/commit/473fae89f7734eb0cfc3bea035c732de8ccc1796) Update dependency @babel/runtime to v7.10.1
