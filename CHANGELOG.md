@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v3.6.0 (2020-08-01)
+### Added
+- [9ada976](https://github.com/fabulator/gpx-builder/commit/9ada976af61489d8b08397bb31613a2efdccba5e) Support for Strava Point
+
+### Changed
+- [9ada976](https://github.com/fabulator/gpx-builder/commit/9ada976af61489d8b08397bb31613a2efdccba5e) Change building libraries
+- [4d609e5](https://github.com/fabulator/gpx-builder/commit/4d609e53fc6480dd2c0be1d367a28cb50b3e03b2) Update dev dependency semantic-release-config-fabulator to v2 
+
 ## [3.5.0] 2020-07-15
 ### Changed
 - [80dc975](https://github.com/fabulator/gpx-builder/commit/80dc97591334829e43ebb4fec78beebed281155d) Update dependency @babel/runtime to v7.10.5
