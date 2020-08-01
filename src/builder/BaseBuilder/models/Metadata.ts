@@ -1,8 +1,8 @@
-import { Meta, Extensions } from '../../../types';
-import Person from './Person';
-import Copyright from './Copyright';
+import { Extensions, Meta } from '../../../types';
 import Bounds from './Bounds';
+import Copyright from './Copyright';
 import Link from './Link';
+import Person from './Person';
 
 export default class Metadata {
     private name: string | null;
@@ -23,7 +23,6 @@ export default class Metadata {
 
     private extensions: Extensions | null;
 
-
     /**
      * @see http://www.topografix.com/gpx/1/1/#type_metadataType
      */
@@ -39,15 +38,15 @@ export default class Metadata {
         bounds,
         extensions,
     }: {
-        name?: string,
-        desc?: string,
-        author?: Person,
-        copyright?: Copyright,
-        link?: Link,
-        time?: Date,
-        keywords?: string,
-        bounds?: Bounds,
-        extensions?: Extensions,
+        author?: Person;
+        bounds?: Bounds;
+        copyright?: Copyright;
+        desc?: string;
+        extensions?: Extensions;
+        keywords?: string;
+        link?: Link;
+        name?: string;
+        time?: Date;
     }) {
         this.name = name || null;
         this.desc = desc || null;
@@ -62,17 +61,7 @@ export default class Metadata {
 
     // eslint-disable-next-line complexity
     public toObject(): Meta {
-        const {
-            name,
-            desc,
-            author,
-            copyright,
-            link,
-            time,
-            keywords,
-            bounds,
-            extensions,
-        } = this;
+        const { name, desc, author, copyright, link, time, keywords, bounds, extensions } = this;
 
         return {
             ...(name ? { name } : {}),

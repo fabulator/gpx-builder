@@ -1,8 +1,10 @@
-import { create } from 'xmlbuilder';
+import { create, XMLElement } from 'xmlbuilder';
 import { GPXBuildData } from '../types';
 import { CreatorInterface } from './CreatorInterface';
 
-interface Settings {[key: string]: string | boolean}
+interface Settings {
+    [key: string]: string | boolean;
+}
 
 export default class XMLCreator implements CreatorInterface {
     private settings: Settings;
@@ -12,7 +14,7 @@ export default class XMLCreator implements CreatorInterface {
     }
 
     // eslint-disable-next-line complexity
-    private processXmlItem(dir: any, key: string, value: any) {
+    private processXmlItem(dir: XMLElement, key: string, value: any) {
         if (key === 'attributes') {
             Object.keys(value).forEach((attribute) => {
                 dir.attribute(attribute, value[attribute]);
@@ -54,12 +56,14 @@ export default class XMLCreator implements CreatorInterface {
         dir.ele(key, value);
     }
 
-    private generateXmlData(dir: any, object: any) {
-        Object.keys(object).map((key) => {
-            return { key, value: object[key] };
-        }).forEach(({ key, value }) => {
-            this.processXmlItem(dir, key, value);
-        });
+    private generateXmlData(dir: XMLElement, object: any) {
+        Object.keys(object)
+            .map((key) => {
+                return { key, value: object[key] };
+            })
+            .forEach(({ key, value }) => {
+                this.processXmlItem(dir, key, value);
+            });
     }
 
     public toString(data: GPXBuildData): string {

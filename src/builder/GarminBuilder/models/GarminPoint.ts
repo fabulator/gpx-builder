@@ -1,14 +1,14 @@
 import Point, { PointOptions } from '../../BaseBuilder/models/Point';
 
-interface GarminPointOptions extends PointOptions {
-    hr?: number,
-    cad?: number,
-    speed?: number,
-    atemp?: number,
-    wtemp?: number,
-    depth?: number,
-    course?: number,
-    bearing?: number,
+export interface GarminPointOptions extends PointOptions {
+    atemp?: number;
+    bearing?: number;
+    cad?: number;
+    course?: number;
+    depth?: number;
+    hr?: number;
+    speed?: number;
+    wtemp?: number;
 }
 
 export default class GarminPoint extends Point {
@@ -20,9 +20,7 @@ export default class GarminPoint extends Point {
     // eslint-disable-next-line complexity
     public constructor(lat: number, lon: number, options: GarminPointOptions = {}) {
         super(lat, lon, options);
-        const {
-            hr, cad, speed, atemp, wtemp, depth, course, bearing,
-        } = options;
+        const { hr, cad, speed, atemp, wtemp, depth, course, bearing } = options;
 
         const extensionPrefix = 'gpxtpx';
         const trackPointExtension = `${extensionPrefix}:TrackPointExtension`;
@@ -39,9 +37,11 @@ export default class GarminPoint extends Point {
 
         this.extensions = {
             ...this.extensions,
-            ...(Object.keys(data).length > 0 ? {
-                [trackPointExtension]: data,
-            } : {}),
+            ...(Object.keys(data).length > 0
+                ? {
+                      [trackPointExtension]: data,
+                  }
+                : {}),
         };
     }
 }

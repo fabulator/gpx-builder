@@ -1,10 +1,9 @@
+import BaseBuilder from './builder/BaseBuilder';
+import GarminBuilder from './builder/GarminBuilder';
+import StravaBuilder from './builder/StravaBuilder';
 import { XMLCreator } from './creators';
-import { BaseBuilder, GarminBuilder } from './builder';
 import { CreatorInterface } from './creators/CreatorInterface';
-
-import {
-    GPXBuildData,
-} from './types';
+import { GPXBuildData } from './types';
 
 /**
  * Function that create XML string with GPX data.
@@ -18,4 +17,4 @@ function buildGPX(data: GPXBuildData, creator?: CreatorInterface): string {
     return gpxCreator.toString(data);
 }
 
-export { BaseBuilder, GarminBuilder, buildGPX };
+export { BaseBuilder, GarminBuilder, StravaBuilder, buildGPX };

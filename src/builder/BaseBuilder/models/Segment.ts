@@ -6,7 +6,6 @@ export default class Segment {
 
     private extensions: Extensions | null;
 
-
     /**
      * @see http://www.topografix.com/gpx/1/1/#type_trksegType
      */
@@ -21,10 +20,7 @@ export default class Segment {
     }
 
     public toObject(): TrackSegment {
-        const {
-            trkpt,
-            extensions,
-        } = this;
+        const { trkpt, extensions } = this;
 
         return {
             trkpt: trkpt.map((point) => point.toObject()),

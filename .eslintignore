@@ -1,2 +1,7 @@
 # Ignore built files except build/index.ts
-rollup.config.js
+**/node_modules
+**/dist
+tsconfig.json
+**/dev
+**/es
+package-lock.json

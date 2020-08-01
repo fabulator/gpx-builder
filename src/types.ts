@@ -1,112 +1,112 @@
 export interface Link {
     attributes: {
-        href: string,
-    },
-    text?: string,
-    type?: string,
+        href: string;
+    };
+    text?: string;
+    type?: string;
 }
 
 export interface Person {
-    name?: string,
-    email?: string,
-    link?: Link,
+    email?: string;
+    link?: Link;
+    name?: string;
 }
 
 export interface Copyright {
     attributes: {
-        author: string,
-    },
-    year?: number,
-    license?: string,
+        author: string;
+    };
+    license?: string;
+    year?: number;
 }
 
 export interface Bounds {
     attributes: {
-        minlat: number,
-        minlon: number,
-        maxlat: number,
-        maxlon: number,
-    },
+        maxlat: number;
+        maxlon: number;
+        minlat: number;
+        minlon: number;
+    };
 }
 
 export interface Extensions {
-    [key: string]: {[key: string]: string | number},
+    [key: string]: { [key: string]: string | number };
 }
 
 export interface Meta {
-    name?: string,
-    desc?: string,
-    author?: Person,
-    copyright?: Copyright,
-    link?: Link,
-    time?: Date,
-    keywords?: string,
-    bounds?: Bounds,
-    extensions?: Extensions,
+    author?: Person;
+    bounds?: Bounds;
+    copyright?: Copyright;
+    desc?: string;
+    extensions?: Extensions;
+    keywords?: string;
+    link?: Link;
+    name?: string;
+    time?: Date;
 }
 
 export interface WayPoint {
+    ageofdgpsdata?: number;
     attributes: {
-        lat: number,
-        lon: number,
-    },
-    ele?: number,
-    time?: Date,
-    magvar?: number,
-    geoidheight?: number,
-    name?: string,
-    cmt?: string,
-    desc?: string,
-    src?: string,
-    link?: Link,
-    sym?: string,
-    type?: string,
-    fix?: number,
-    sat?: number,
-    hdop?: number,
-    vdop?: number,
-    pdop?: number,
-    ageofdgpsdata?: number,
-    dgpsid?: number,
-    extensions?: Extensions,
+        lat: number;
+        lon: number;
+    };
+    cmt?: string;
+    desc?: string;
+    dgpsid?: number;
+    ele?: number;
+    extensions?: Extensions;
+    fix?: number;
+    geoidheight?: number;
+    hdop?: number;
+    link?: Link;
+    magvar?: number;
+    name?: string;
+    pdop?: number;
+    sat?: number;
+    src?: string;
+    sym?: string;
+    time?: Date;
+    type?: string;
+    vdop?: number;
 }
 
 export interface Route {
-    name?: string,
-    cmt?: string,
-    desc?: string,
-    src?: string,
-    link?: Link,
-    number?: number,
-    type?: string,
-    extensions?: Extensions,
-    rtept?: WayPoint[],
+    cmt?: string;
+    desc?: string;
+    extensions?: Extensions;
+    link?: Link;
+    name?: string;
+    number?: number;
+    rtept?: WayPoint[];
+    src?: string;
+    type?: string;
 }
 
 export interface TrackSegment {
-    trkpt: WayPoint[],
-    extensions?: Extensions,
+    extensions?: Extensions;
+    trkpt: WayPoint[];
 }
 
 export interface Track {
-    name?: string,
-    cmt?: string,
-    desc?: string,
-    src?: string,
-    link?: Link,
-    number?: number,
-    type?: string,
-    extensions?: Extensions,
-    trkseg?: TrackSegment[],
+    cmt?: string;
+    desc?: string;
+    extensions?: Extensions;
+    link?: Link;
+    name?: string;
+    number?: number;
+    src?: string;
+    trkseg?: TrackSegment[];
+    type?: string;
 }
 
 export interface GPXBuildData {
     attributes?: {
-        [key: string]: string,
-    },
-    metadata?: Meta,
-    wpt?: WayPoint[],
-    rte?: Route[],
-    trk?: Track[],
-    extensions?: Extensions,
+        [key: string]: string;
+    };
+    extensions?: Extensions;
+    metadata?: Meta;
+    rte?: Route[];
+    trk?: Track[];
+    wpt?: WayPoint[];
 }

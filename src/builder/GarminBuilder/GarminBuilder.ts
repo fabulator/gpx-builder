@@ -1,4 +1,3 @@
-import { GPXBuildData } from '../../types';
 import BaseBuilder from '../BaseBuilder';
 import GarminPoint from './models/GarminPoint';
 

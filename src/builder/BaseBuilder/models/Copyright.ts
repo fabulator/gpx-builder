@@ -13,24 +13,23 @@ export default class Copyright {
      * @param license - Type of licence
      * @see http://www.topografix.com/gpx/1/1/#type_copyrightType
      */
-    public constructor(author: string, {
-        year,
-        license,
-    }: {
-        year?: number,
-        license?: string,
-    }) {
+    public constructor(
+        author: string,
+        {
+            year,
+            license,
+        }: {
+            license?: string;
+            year?: number;
+        },
+    ) {
         this.author = author;
         this.year = year || null;
         this.license = license || null;
     }
 
     public toObject(): CopyrightData {
-        const {
-            author,
-            year,
-            license,
-        } = this;
+        const { author, year, license } = this;
 
         return {
             attributes: { author },

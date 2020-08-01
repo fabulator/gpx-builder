@@ -1,4 +1,4 @@
-import { Track as TrackData, Extensions } from '../../../types';
+import { Extensions, Track as TrackData } from '../../../types';
 import Link from './Link';
 import Segment from './Segment';
 
@@ -25,25 +25,28 @@ export default class Track {
      * @see http://www.topografix.com/gpx/1/1/#type_trkType
      */
     // eslint-disable-next-line complexity
-    public constructor(trkseg: Segment[] | null, {
-        name,
-        cmt,
-        desc,
-        src,
-        link,
-        number,
-        type,
-        extensions,
-    }: {
-        name?: string,
-        cmt?: string,
-        desc?: string,
-        src?: string,
-        link?: Link,
-        number?: number,
-        type?: string,
-        extensions?: Extensions,
-    } = {}) {
+    public constructor(
+        trkseg: Segment[] | null,
+        {
+            name,
+            cmt,
+            desc,
+            src,
+            link,
+            number,
+            type,
+            extensions,
+        }: {
+            cmt?: string;
+            desc?: string;
+            extensions?: Extensions;
+            link?: Link;
+            name?: string;
+            number?: number;
+            src?: string;
+            type?: string;
+        } = {},
+    ) {
         this.name = name || null;
         this.cmt = cmt || null;
         this.desc = desc || null;
@@ -62,17 +65,7 @@ export default class Track {
 
     // eslint-disable-next-line complexity
     public toObject(): TrackData {
-        const {
-            name,
-            cmt,
-            desc,
-            src,
-            link,
-            number,
-            type,
-            extensions,
-            trkseg,
-        } = this;
+        const { name, cmt, desc, src, link, number, type, extensions, trkseg } = this;
 
         return {
             ...(name ? { name } : {}),

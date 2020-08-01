@@ -10,24 +10,23 @@ export default class Link {
     /**
      * @see http://www.topografix.com/gpx/1/1/#type_linkType
      */
-    public constructor(href: string, {
-        text,
-        type,
-    }: {
-        text?: string,
-        type?: string,
-    }) {
+    public constructor(
+        href: string,
+        {
+            text,
+            type,
+        }: {
+            text?: string;
+            type?: string;
+        },
+    ) {
         this.href = href;
         this.text = text || null;
         this.type = type || null;
     }
 
     public toObject(): LinkData {
-        const {
-            href,
-            text,
-            type,
-        } = this;
+        const { href, text, type } = this;
 
         return {
             attributes: { href },

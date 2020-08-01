@@ -1,12 +1,7 @@
 /* eslint-disable import/no-duplicates */
-import { GPXBuildData, Route, Extensions } from '../../types';
-import {
-    Track,
-    Metadata,
-    Segment,
-    Point,
-} from './models';
+import { Extensions, GPXBuildData, Route } from '../../types';
 import * as models from './models';
+import { Metadata, Point, Segment, Track } from './models';
 
 export default class BaseBuilder {
     protected data: GPXBuildData;
@@ -95,9 +90,9 @@ export default class BaseBuilder {
         return {
             ...this.data,
             attributes: {
-                creator: 'fabulator:gpx-builder',
-                version: '1.1',
-                xmlns: 'http://www.topografix.com/GPX/1/1',
+                'creator': 'fabulator:gpx-builder',
+                'version': '1.1',
+                'xmlns': 'http://www.topografix.com/GPX/1/1',
                 'xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
                 'xsi:schemaLocation': this.schemaLocation.join(' '),
                 ...this.data.attributes,

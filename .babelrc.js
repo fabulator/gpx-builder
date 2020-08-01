@@ -1,3 +1,3 @@
 module.exports = {
-    extends: '@socifi/babel-config',
+    extends: 'babel-config-fabulator',
 };

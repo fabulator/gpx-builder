@@ -40,6 +40,24 @@ console.log(buildGPX(gpxData.toObject()));
 
 ```
 
+You can use Strava format that support power and distance on top of Garmin standard properties.
+
+
+```typescript
+const { StravaBuilder } = require('gpx-builder');
+const { Point } = StravaBuilder.MODELS;
+
+const points = [
+    new Point(51.02832496166229, 15.515156626701355, {
+        ele: 314.715,
+        time: new Date('2018-06-10T17:29:35Z'),
+        hr: 120,
+        power: 5,
+        distance: 1,
+    }),
+];
+```
+
 ### How library works
 
 Library contain two types of classes:

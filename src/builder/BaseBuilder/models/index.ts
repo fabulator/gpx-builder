@@ -7,13 +7,4 @@ import Point from './Point';
 import Segment from './Segment';
 import Track from './Track';
 
-export {
-    Bounds,
-    Copyright,
-    Track,
-    Segment,
-    Point,
-    Metadata,
-    Person,
-    Link,
-};
+export { Bounds, Copyright, Track, Segment, Point, Metadata, Person, Link };

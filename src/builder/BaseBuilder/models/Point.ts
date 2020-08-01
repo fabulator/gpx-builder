@@ -2,25 +2,25 @@ import { Extensions, WayPoint } from '../../../types';
 import Link from './Link';
 
 export interface PointOptions {
-    ele?: number,
-    time?: Date,
-    magvar?: number,
-    geoidheight?: number,
-    name?: string,
-    cmt?: string,
-    desc?: string,
-    src?: string,
-    link?: Link,
-    sym?: string,
-    type?: string,
-    fix?: number,
-    sat?: number,
-    hdop?: number,
-    vdop?: number,
-    pdop?: number,
-    ageofdgpsdata?: number,
-    dgpsid?: number,
-    extensions?: Extensions,
+    ageofdgpsdata?: number;
+    cmt?: string;
+    desc?: string;
+    dgpsid?: number;
+    ele?: number;
+    extensions?: Extensions;
+    fix?: number;
+    geoidheight?: number;
+    hdop?: number;
+    link?: Link;
+    magvar?: number;
+    name?: string;
+    pdop?: number;
+    sat?: number;
+    src?: string;
+    sym?: string;
+    time?: Date;
+    type?: string;
+    vdop?: number;
 }
 
 export default class Point {
@@ -66,32 +66,35 @@ export default class Point {
 
     protected extensions: Extensions | null;
 
-
     /**
      * @see http://www.topografix.com/gpx/1/1/#type_wptType
      */
     // eslint-disable-next-line complexity, sonarjs/cognitive-complexity
-    public constructor(lat: number, lon: number, {
-        ele,
-        time,
-        magvar,
-        geoidheight,
-        name,
-        cmt,
-        desc,
-        src,
-        link,
-        sym,
-        type,
-        fix,
-        sat,
-        hdop,
-        vdop,
-        pdop,
-        ageofdgpsdata,
-        dgpsid,
-        extensions,
-    }: PointOptions = {}) {
+    public constructor(
+        lat: number,
+        lon: number,
+        {
+            ele,
+            time,
+            magvar,
+            geoidheight,
+            name,
+            cmt,
+            desc,
+            src,
+            link,
+            sym,
+            type,
+            fix,
+            sat,
+            hdop,
+            vdop,
+            pdop,
+            ageofdgpsdata,
+            dgpsid,
+            extensions,
+        }: PointOptions = {},
+    ) {
         this.lat = lat;
         this.lon = lon;
         this.ele = ele || null;

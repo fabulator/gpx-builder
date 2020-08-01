@@ -20,12 +20,7 @@ export default class Bounds {
     }
 
     public toObject(): BoundsData {
-        const {
-            minlat,
-            minlon,
-            maxlat,
-            maxlon,
-        } = this;
+        const { minlat, minlon, maxlat, maxlon } = this;
 
         return {
             attributes: {

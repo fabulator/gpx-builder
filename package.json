@@ -2,27 +2,6 @@
   "name": "gpx-builder",
   "version": "3.5.0",
   "description": "Builder of GPX files",
-  "main": "dist/index.js",
-  "jsnext:main": "dist/index.esm.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "lint": "eslint --ext .ts ./src ./tests",
-    "lint:export": "npm run lint -- -o ./tests_results/checkstyle/js-checkstyle.xml -f checkstyle",
-    "tsc": "tsc",
-    "test": "jest",
-    "test:build": "npm run test -- --config jest.config.build.js",
-    "build": "rollup --config ./rollup.config.js",
-    "test:all": "npm run lint && npm run tsc && npm run test",
-    "prepublishOnly": "npm run build && npm run tsc && npm run test:build",
-    "release": "semantic-release"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/fabulator/gpx-builder.git"
-  },
-  "author": "Michal Ozogán <michal@ozogan.eu>",
-  "license": "Apache-2.0",
   "keywords": [
     "gpx",
     "garmin",
@@ -30,16 +9,38 @@
     "gps"
   ],
   "homepage": "https://github.com/fabulator/gpx-builder#readme",
-  "devDependencies": {
-    "@socifi/babel-config": "^1.0.0",
-    "@socifi/commitlint-config": "^1.1.0",
-    "@socifi/eslint-config": "^2.10.0",
-    "@socifi/jest-config": "^2.4.1",
-    "@socifi/rollup-config": "^2.2.2",
-    "semantic-release-config-fabulator": "^2.0.0"
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fabulator/gpx-builder.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Michal Ozogán <michal@ozogan.eu>",
+  "main": "dist/index.js",
+  "module": "es/index.js",
+  "jsnext:main": "es/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup --config ./rollup.config.js",
+    "lint": "eslint ./ --ext .js --ext .json --ext .ts",
+    "lint:export": "npm run lint -- -o ./tests_results/checkstyle/js-checkstyle.xml -f checkstyle",
+    "lint:fix": "npm run lint -- --fix",
+    "prepublishOnly": "npm run build && npm run tsc && npm run test:build",
+    "release": "semantic-release",
+    "test": "jest",
+    "test:all": "npm run lint && npm run tsc && npm run test",
+    "test:build": "npm run test -- --config jest.config.build.js",
+    "tsc": "tsc"
   },
   "dependencies": {
-    "@babel/runtime": "^7.8.4",
-    "xmlbuilder": "^15.0.0"
+    "@babel/runtime": "^7.11.0",
+    "xmlbuilder": "^15.1.1"
+  },
+  "devDependencies": {
+    "babel-config-fabulator": "^1.0.0",
+    "commitlint-config-fabulator": "^1.0.0",
+    "eslint-config-fabulator": "^1.0.2",
+    "jest-config-fabulator": "^1.0.0",
+    "rollup-config-fabulator": "^1.0.0",
+    "semantic-release-config-fabulator": "^2.5.0"
   }
 }
