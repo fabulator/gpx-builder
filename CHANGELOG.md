@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v3.6.1 (2020-09-12)
+### Fixed
+- [e78f63f](https://github.com/fabulator/gpx-builder/commit/e78f63f0ac33ba8a6070adac43c93725d6948fd6) Security lock update
+
 ## v3.6.0 (2020-08-01)
 ### Added
 - [9ada976](https://github.com/fabulator/gpx-builder/commit/9ada976af61489d8b08397bb31613a2efdccba5e) Support for Strava Point
