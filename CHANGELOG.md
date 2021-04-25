@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v3.6.39 (2021-04-25)
+### Fixed
+- [eba91e6](https://github.com/fabulator/gpx-builder/commit/eba91e62f295af02e34b9fff71f467f3388d0252) Update lock for security updated
+
 ## v3.6.38 (2021-04-12)
 ### Fixed
 - [8b757c9](https://github.com/fabulator/gpx-builder/commit/8b757c9fed2183086b41df9d791ce356936a7303) Update lock for security updated
