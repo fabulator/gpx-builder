@@ -1,6 +1,6 @@
 {
   "name": "gpx-builder",
-  "version": "3.7.7",
+  "version": "3.7.8",
   "description": "Builder of GPX files",
   "keywords": [
     "gpx",
