@@ -41,6 +41,6 @@
     "eslint-config-fabulator": "^1.2.2",
     "jest-config-fabulator": "^1.1.0",
     "rollup-config-fabulator": "^1.1.0",
-    "semantic-release-config-fabulator": "^2.6.2"
+    "semantic-release-config-fabulator": "^3.0.0"
   }
 }
