@@ -1,0 +1,23 @@
+name: CI
+
+on: [push]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Use Node.js 14.x
+              uses: actions/setup-node@v2
+              with:
+                  node-version: 14.x
+            - name: NPM Build and Test
+              run: |
+                  npm ci
+                  npm run lint
+                  npm run tsc
+                  npm run test
+                  npm run release
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GHUB_BOT_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
