@@ -1,6 +1,24 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v3.8.0 (2021-10-28)
+### Fixed
+- [0da2b87](https://github.com/fabulator/gpx-builder/commit/0da2b87a82403f5bc256ddb0d0aff01856f2c7bd) Linter
+- [37b17cb](https://github.com/fabulator/gpx-builder/commit/37b17cbedd2cec859e7531292a9fd8933a3b911b) Update lock for security updated
+- [7edc48b](https://github.com/fabulator/gpx-builder/commit/7edc48bccc73bc805323a591c11eff551c145f0e) Update lock for security updated
+- [52aae59](https://github.com/fabulator/gpx-builder/commit/52aae594ab9035896707bf09235649cbba85f4aa) Update lock for security updated
+- [e71dfe9](https://github.com/fabulator/gpx-builder/commit/e71dfe93190ccd322d98516f541ad72c95661e7e) Update lock for security updated
+- [44e844c](https://github.com/fabulator/gpx-builder/commit/44e844c8ab5bcfb8a9e74ebcece5e388e0a8e301) Update lock for security updated
+
+### WIP
+- [0339fd9](https://github.com/fabulator/gpx-builder/commit/0339fd922a47b02328f89b9be5bd2c20c280240a) Github actions
+
+### Changed
+- [e7ea1ba](https://github.com/fabulator/gpx-builder/commit/e7ea1ba775e023fb5c6fcd7fc88e2bac17e506c0) Update dependencies and README
+- [3cfcb91](https://github.com/fabulator/gpx-builder/commit/3cfcb917ada1aa9e3da3c6efa0228b893d936a57) Update dev dependency semantic-release-config-fabulator to v3  (#113)
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+
 ## v3.7.8 (2021-08-23)
 ### Fixed
 - [b55dcad](https://github.com/fabulator/gpx-builder/commit/b55dcadaa4202484834a729cb913112ddae8beec) Update lock for security updated
