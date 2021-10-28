@@ -24,13 +24,13 @@
     "lint": "eslint ./ --ext .js --ext .json --ext .ts",
     "lint:export": "npm run lint -- -o ./tests_results/checkstyle/js-checkstyle.xml -f checkstyle",
     "lint:fix": "npm run lint -- --fix",
+    "prepare": "husky install",
     "prepublishOnly": "npm run build && npm run tsc && npm run test:build",
     "release": "semantic-release",
     "test": "jest",
     "test:all": "npm run lint && npm run tsc && npm run test",
     "test:build": "npm run test -- --config jest.config.build.js",
-    "tsc": "tsc",
-    "prepare": "husky install"
+    "tsc": "tsc"
   },
   "dependencies": {
     "@babel/runtime": "^7.15.4",
