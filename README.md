@@ -2,7 +2,9 @@
 
 [![codecov](https://img.shields.io/npm/v/gpx-builder.svg)](https://www.npmjs.com/package/gpx-builder) [![codecov](https://codecov.io/gh/fabulator/gpx-builder/branch/master/graph/badge.svg)](https://codecov.io/gh/fabulator/gpx-builder)  [![codecov](https://travis-ci.org/fabulator/gpx-builder.svg?branch=master)](https://travis-ci.org/fabulator/gpx-builder) [![Maintainability](https://api.codeclimate.com/v1/badges/7ab35417954388460660/maintainability)](https://codeclimate.com/github/fabulator/gpx-builder/maintainability)
 
-This library creates GPX files based on version 1.1. I recommend you to check full [documentation on topografix](http://www.topografix.com/gpx/1/1/). Library have also option to use Garmin extensions so you can add cadence, heart rate, speed and other data to your points.
+This library creates GPX files based on version 1.1. I recommend you to check full [documentation on topografix](http://www.topografix.com/gpx/1/1/). The library has also options to use Garmin extensions, so you can add cadence, heart rate, speed and other fitness data to your points.
+
+Integration for Strava allows to use some non-standard metric as power. That XML is not valid by standards, but it's the way that Strava use it.
 
 ## How to use
 
@@ -67,5 +69,6 @@ Library contain two types of classes:
 
 Library contain two Builders:
 
-- BaseBuilder - To create GPX 1.1 valid files
+- BaseBuilder - To create GPX 1.1 valid files. [Check all the properties you can add to GPX](https://github.com/fabulator/gpx-builder/blob/master/src/builder/BaseBuilder/BaseBuilder.ts).
 - GarminBuilder - To use [TrackPointExtensionv2 schema](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) from Garmin.
+- StravaBuilder - To extends GPX by data that uses Strava.
