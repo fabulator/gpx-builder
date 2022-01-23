@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v4.0.0 (2022-01-23)
+### Changed
+- [19dbf65](https://github.com/fabulator/gpx-builder/commit/19dbf65f36dbd6fad2c1483e036570e3cdb5a804) Use Route class instead of Route type for base-builder. BREAKING
+
 ## v3.8.0 (2021-10-28)
 ### Fixed
 - [0da2b87](https://github.com/fabulator/gpx-builder/commit/0da2b87a82403f5bc256ddb0d0aff01856f2c7bd) Linter
