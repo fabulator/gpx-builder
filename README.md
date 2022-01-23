@@ -67,8 +67,12 @@ Library contain two types of classes:
 - Creators - They create xml string from defined Object structure
 - Builders - They offer user friendly way to create data for creators
 
-Library contain two Builders:
+Library contain three Builders:
 
 - BaseBuilder - To create GPX 1.1 valid files. [Check all the properties you can add to GPX](https://github.com/fabulator/gpx-builder/blob/master/src/builder/BaseBuilder/BaseBuilder.ts).
 - GarminBuilder - To use [TrackPointExtensionv2 schema](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) from Garmin.
 - StravaBuilder - To extends GPX by data that uses Strava.
+
+Types
+
+What you find in [type file](https://github.com/fabulator/gpx-builder/blob/master/src/types.ts) are types that are used as object for builders. Eg. you can create object based on `WayPoint` and use it directly to creator. You can also use `Point` class in builder section that has more user friendly constructor. It will convert you data to `WayPoint` type.   

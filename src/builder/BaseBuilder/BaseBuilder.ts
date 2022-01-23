@@ -1,7 +1,7 @@
 /* eslint-disable import/no-duplicates */
-import { Extensions, GPXBuildData, Route } from '../../types';
+import { Extensions, GPXBuildData } from '../../types';
 import * as models from './models';
-import { Metadata, Point, Segment, Track } from './models';
+import { Metadata, Point, Segment, Track, Route } from './models';
 
 export default class BaseBuilder {
     protected data: GPXBuildData;
@@ -44,7 +44,7 @@ export default class BaseBuilder {
      * @returns {BaseBuilder} self
      */
     public setRoutes(routes: Route[]): this {
-        this.data.rte = routes;
+        this.data.rte = routes.map((route) => route.toObject());
         return this;
     }
 
