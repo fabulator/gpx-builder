@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v4.1.0 (2022-04-02)
+### Changed
+- [8a00cbb](https://github.com/fabulator/gpx-builder/commit/8a00cbb01f75132810a96c2012ed347317edec1a) Update dev dependencies 
+- [f6bfce4](https://github.com/fabulator/gpx-builder/commit/f6bfce47a493e574963133999088b40d8bb4c272) Update dev dependency commitlint-config-fabulator to v3  (#121)
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+
+### Docs
+- [a4fd885](https://github.com/fabulator/gpx-builder/commit/a4fd88513b8cebd5b3b29b51949779e2d062b259) Fix typos in readme and remove unused badges 
+
 ## v4.0.3 (2022-01-31)
 ### Fixed
 - [2d335ed](https://github.com/fabulator/gpx-builder/commit/2d335ed4ad5dbaf0db67264e909efee0749de9c4) Update lock for security updated
