@@ -1,3 +1,1 @@
-import StravaBuilder from './StravaBuilder';
-
-export default StravaBuilder;
+export { default } from './StravaBuilder';

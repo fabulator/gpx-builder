@@ -1,3 +1,1 @@
-import XMLCreator from './XMLCreator';
-
-export { XMLCreator };
+export { default as XMLCreator } from './XMLCreator';

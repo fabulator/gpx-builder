@@ -1,11 +1,9 @@
-import Bounds from './Bounds';
-import Copyright from './Copyright';
-import Link from './Link';
-import Metadata from './Metadata';
-import Person from './Person';
-import Point from './Point';
-import Route from './Route';
-import Segment from './Segment';
-import Track from './Track';
-
-export { Bounds, Copyright, Track, Segment, Point, Metadata, Person, Link, Route };
+export { default as Bounds } from './Bounds';
+export { default as Link } from './Link';
+export { default as Copyright } from './Copyright';
+export { default as Person } from './Person';
+export { default as Metadata } from './Metadata';
+export { default as Route } from './Route';
+export { default as Point } from './Point';
+export { default as Track } from './Track';
+export { default as Segment } from './Segment';

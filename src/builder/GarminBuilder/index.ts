@@ -1,3 +1,1 @@
-import GarminBuilder from './GarminBuilder';
-
-export default GarminBuilder;
+export { default } from './GarminBuilder';

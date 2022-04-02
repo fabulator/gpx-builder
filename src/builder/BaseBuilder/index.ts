@@ -1,4 +1,3 @@
 // @flow strict
-import BaseBuilder from './BaseBuilder';
 
-export default BaseBuilder;
+export { default } from './BaseBuilder';
