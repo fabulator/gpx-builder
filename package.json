@@ -33,16 +33,16 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@babel/runtime": "^7.15.4",
+    "@babel/runtime": "^7.17.8",
     "xmlbuilder": "^15.1.1"
   },
   "devDependencies": {
-    "babel-config-fabulator": "^1.2.1",
+    "babel-config-fabulator": "^1.4.23",
     "commitlint-config-fabulator": "^3.0.0",
-    "eslint-config-fabulator": "^1.2.3",
+    "eslint-config-fabulator": "^1.3.9",
     "husky": "^7.0.4",
-    "jest-config-fabulator": "^1.1.0",
-    "rollup-config-fabulator": "^1.1.0",
-    "semantic-release-config-fabulator": "^3.0.3"
+    "jest-config-fabulator": "^1.2.0",
+    "rollup-config-fabulator": "^1.2.13",
+    "semantic-release-config-fabulator": "^3.3.0"
   }
 }
