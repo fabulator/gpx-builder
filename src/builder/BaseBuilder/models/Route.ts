@@ -44,7 +44,7 @@ export default class Route {
             ...(desc ? { desc } : {}),
             ...(src ? { src } : {}),
             ...(link ? { link } : {}),
-            ...(number ? { number } : {}),
+            ...(typeof number === 'number' ? { number } : {}),
             ...(type ? { type } : {}),
             ...(extensions ? { extensions } : {}),
             ...(rtept ? { rtept: rtept.map((item) => item.toObject()) } : {}),

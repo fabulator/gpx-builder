@@ -28,43 +28,43 @@ export default class Point {
 
     protected lon: number;
 
-    protected ele: number | null;
+    protected ele?: number;
 
-    protected time: Date | null;
+    protected time?: Date;
 
-    protected magvar: number | null;
+    protected magvar?: number;
 
-    protected geoidheight: number | null;
+    protected geoidheight?: number;
 
-    protected name: string | null;
+    protected name?: string;
 
-    protected cmt: string | null;
+    protected cmt?: string;
 
-    protected desc: string | null;
+    protected desc?: string;
 
-    protected src: string | null;
+    protected src?: string;
 
-    protected link: Link | null;
+    protected link?: Link;
 
-    protected sym: string | null;
+    protected sym?: string;
 
-    protected type: string | null;
+    protected type?: string;
 
-    protected fix: number | null;
+    protected fix?: number;
 
-    protected sat: number | null;
+    protected sat?: number;
 
-    protected hdop: number | null;
+    protected hdop?: number;
 
-    protected vdop: number | null;
+    protected vdop?: number;
 
-    protected pdop: number | null;
+    protected pdop?: number;
 
-    protected ageofdgpsdata: number | null;
+    protected ageofdgpsdata?: number;
 
-    protected dgpsid: number | null;
+    protected dgpsid?: number;
 
-    protected extensions: Extensions | null;
+    protected extensions?: Extensions;
 
     /**
      * @see http://www.topografix.com/gpx/1/1/#type_wptType
@@ -97,25 +97,25 @@ export default class Point {
     ) {
         this.lat = lat;
         this.lon = lon;
-        this.ele = ele || null;
-        this.time = time || null;
-        this.magvar = magvar || null;
-        this.geoidheight = geoidheight || null;
-        this.name = name || null;
-        this.cmt = cmt || null;
-        this.desc = desc || null;
-        this.src = src || null;
-        this.link = link || null;
-        this.sym = sym || null;
-        this.type = type || null;
-        this.fix = fix || null;
-        this.sat = sat || null;
-        this.hdop = hdop || null;
-        this.vdop = vdop || null;
-        this.pdop = pdop || null;
-        this.ageofdgpsdata = ageofdgpsdata || null;
-        this.dgpsid = dgpsid || null;
-        this.extensions = extensions || null;
+        this.ele = ele;
+        this.time = time;
+        this.magvar = magvar;
+        this.geoidheight = geoidheight;
+        this.name = name;
+        this.cmt = cmt;
+        this.desc = desc;
+        this.src = src;
+        this.link = link;
+        this.sym = sym;
+        this.type = type;
+        this.fix = fix;
+        this.sat = sat;
+        this.hdop = hdop;
+        this.vdop = vdop;
+        this.pdop = pdop;
+        this.ageofdgpsdata = ageofdgpsdata;
+        this.dgpsid = dgpsid;
+        this.extensions = extensions;
     }
 
     // eslint-disable-next-line complexity, sonarjs/cognitive-complexity
@@ -149,10 +149,10 @@ export default class Point {
                 lat,
                 lon,
             },
-            ...(ele ? { ele } : {}),
-            ...(time ? { time } : {}),
-            ...(magvar ? { magvar } : {}),
-            ...(geoidheight ? { geoidheight } : {}),
+            ...(typeof ele === 'number' ? { ele } : {}),
+            ...(time instanceof Date ? { time } : {}),
+            ...(typeof magvar === 'number' ? { magvar } : {}),
+            ...(typeof geoidheight === 'number' ? { geoidheight } : {}),
             ...(name ? { name } : {}),
             ...(cmt ? { cmt } : {}),
             ...(desc ? { desc } : {}),
@@ -160,13 +160,13 @@ export default class Point {
             ...(link ? { link: link.toObject() } : {}),
             ...(sym ? { sym } : {}),
             ...(type ? { type } : {}),
-            ...(fix ? { fix } : {}),
-            ...(sat ? { sat } : {}),
-            ...(hdop ? { hdop } : {}),
-            ...(vdop ? { vdop } : {}),
-            ...(pdop ? { pdop } : {}),
-            ...(ageofdgpsdata ? { ageofdgpsdata } : {}),
-            ...(dgpsid ? { dgpsid } : {}),
+            ...(typeof fix === 'number' ? { fix } : {}),
+            ...(typeof sat === 'number' ? { sat } : {}),
+            ...(typeof hdop === 'number' ? { hdop } : {}),
+            ...(typeof vdop === 'number' ? { vdop } : {}),
+            ...(typeof pdop === 'number' ? { pdop } : {}),
+            ...(typeof ageofdgpsdata === 'number' ? { ageofdgpsdata } : {}),
+            ...(typeof dgpsid === 'number' ? { dgpsid } : {}),
             ...(extensions && Object.keys(extensions).length > 0 ? { extensions } : {}),
         };
     }

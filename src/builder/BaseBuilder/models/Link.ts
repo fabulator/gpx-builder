@@ -3,9 +3,9 @@ import { Link as LinkData } from '../../../types';
 export default class Link {
     private href: string;
 
-    private text: string | null;
+    private text?: string;
 
-    private type: string | null;
+    private type?: string;
 
     /**
      * @see http://www.topografix.com/gpx/1/1/#type_linkType
@@ -21,8 +21,8 @@ export default class Link {
         },
     ) {
         this.href = href;
-        this.text = text || null;
-        this.type = type || null;
+        this.text = text;
+        this.type = type;
     }
 
     public toObject(): LinkData {

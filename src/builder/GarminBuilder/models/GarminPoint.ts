@@ -25,14 +25,14 @@ export default class GarminPoint extends Point {
         const extensionPrefix = 'gpxtpx';
         const trackPointExtension = `${extensionPrefix}:TrackPointExtension`;
         const data = {
-            ...(hr ? { [`${extensionPrefix}:hr`]: hr } : {}),
-            ...(cad ? { [`${extensionPrefix}:cad`]: cad } : {}),
-            ...(speed ? { [`${extensionPrefix}:speed`]: speed } : {}),
-            ...(atemp ? { [`${extensionPrefix}:atemp`]: atemp } : {}),
-            ...(wtemp ? { [`${extensionPrefix}:wtemp`]: wtemp } : {}),
-            ...(depth ? { [`${extensionPrefix}:depth`]: depth } : {}),
-            ...(course ? { [`${extensionPrefix}:course`]: course } : {}),
-            ...(bearing ? { [`${extensionPrefix}:bearing`]: bearing } : {}),
+            ...(typeof hr === 'number' ? { [`${extensionPrefix}:hr`]: hr } : {}),
+            ...(typeof cad === 'number' ? { [`${extensionPrefix}:cad`]: cad } : {}),
+            ...(typeof speed === 'number' ? { [`${extensionPrefix}:speed`]: speed } : {}),
+            ...(typeof atemp === 'number' ? { [`${extensionPrefix}:atemp`]: atemp } : {}),
+            ...(typeof wtemp === 'number' ? { [`${extensionPrefix}:wtemp`]: wtemp } : {}),
+            ...(typeof depth === 'number' ? { [`${extensionPrefix}:depth`]: depth } : {}),
+            ...(typeof course === 'number' ? { [`${extensionPrefix}:course`]: course } : {}),
+            ...(typeof bearing === 'number' ? { [`${extensionPrefix}:bearing`]: bearing } : {}),
         };
 
         this.extensions = {

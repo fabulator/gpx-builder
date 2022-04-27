@@ -3,9 +3,9 @@ import { Copyright as CopyrightData } from '../../../types';
 export default class Copyright {
     private author: string;
 
-    private year: number | null;
+    private year?: number;
 
-    private license: string | null;
+    private license?: string;
 
     /**
      * @param author - Owner of licence
@@ -24,8 +24,8 @@ export default class Copyright {
         },
     ) {
         this.author = author;
-        this.year = year || null;
-        this.license = license || null;
+        this.year = year;
+        this.license = license ;
     }
 
     public toObject(): CopyrightData {
@@ -33,7 +33,7 @@ export default class Copyright {
 
         return {
             attributes: { author },
-            ...(year ? { year } : {}),
+            ...(typeof year === 'number' ? { year } : {}),
             ...(license ? { license } : {}),
         };
     }

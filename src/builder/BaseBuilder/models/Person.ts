@@ -2,19 +2,19 @@ import { Person as PersonData } from '../../../types';
 import Link from './Link';
 
 export default class Person {
-    private name: string | null;
+    private name?: string;
 
-    private email: string | null;
+    private email?: string;
 
-    private link: Link | null;
+    private link?: Link;
 
     /**
      * @see http://www.topografix.com/gpx/1/1/#type_personType
      */
     public constructor({ name, email, link }: { email?: string; link?: Link; name?: string }) {
-        this.name = name || null;
-        this.email = email || null;
-        this.link = link || null;
+        this.name = name;
+        this.email = email;
+        this.link = link;
     }
 
     public toObject(): PersonData {
