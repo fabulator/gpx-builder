@@ -1,4 +1,5 @@
-import { create, XMLElement } from 'xmlbuilder';
+import { create } from 'xmlbuilder2';
+import { XMLBuilder } from 'xmlbuilder2/lib/interfaces';
 import { GPXBuildData } from '../types';
 import { CreatorInterface } from './CreatorInterface';
 
@@ -14,10 +15,10 @@ export default class XMLCreator implements CreatorInterface {
     }
 
     // eslint-disable-next-line complexity
-    private processXmlItem(dir: XMLElement, key: string, value: any) {
+    private processXmlItem(dir: XMLBuilder, key: string, value: any) {
         if (key === 'attributes') {
             Object.keys(value).forEach((attribute) => {
-                dir.attribute(attribute, value[attribute]);
+                dir.att(attribute, value[attribute]);
             });
             return;
         }
@@ -32,7 +33,7 @@ export default class XMLCreator implements CreatorInterface {
         }
 
         if (value instanceof Date) {
-            dir.ele(key, value.toISOString());
+            dir.ele(key).txt(value.toISOString());
             return;
         }
 
@@ -44,7 +45,7 @@ export default class XMLCreator implements CreatorInterface {
         }
 
         if (Array.isArray(value)) {
-            dir.ele(key, value.join(','));
+            dir.ele(key).txt(value.join(','));
             return;
         }
 
@@ -53,10 +54,10 @@ export default class XMLCreator implements CreatorInterface {
             return;
         }
 
-        dir.ele(key, value);
+        dir.ele(key).txt(value);
     }
 
-    private generateXmlData(dir: XMLElement, object: any) {
+    private generateXmlData(dir: XMLBuilder, object: any) {
         Object.keys(object)
             .map((key) => {
                 return { key, value: object[key] };
@@ -67,15 +68,15 @@ export default class XMLCreator implements CreatorInterface {
     }
 
     public toString(data: GPXBuildData): string {
-        const root = create('gpx', { encoding: 'UTF-8' });
+        const root = create({ encoding: 'UTF-8' }, 'gpx');
 
-        this.generateXmlData(root, data);
+        this.generateXmlData(root.first(), data);
 
         return root.end({
-            allowEmpty: true,
+            allowEmptyTags: true,
             indent: '  ',
             newline: '\n',
-            pretty: true,
+            prettyPrint: true,
             ...this.settings,
         });
     }
