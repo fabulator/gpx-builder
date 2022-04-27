@@ -13,9 +13,9 @@ export default class StravaPoint extends GarminPoint {
 
         this.extensions = {
             ...this.extensions,
-            ...(power != null ? { power } : {}),
-            ...(cad != null ? { cadence: cad } : {}),
-            ...(distance != null ? { distance } : {}),
+            ...(typeof power === 'number' ? { power } : {}),
+            ...(typeof cad === 'number' ? { cadence: cad } : {}),
+            ...(typeof distance === 'number' ? { distance } : {}),
         } as Extensions;
     }
 }

@@ -4,14 +4,14 @@ import Point from './Point';
 export default class Segment {
     private trkpt: Point[];
 
-    private extensions: Extensions | null;
+    private extensions?: Extensions;
 
     /**
      * @see http://www.topografix.com/gpx/1/1/#type_trksegType
      */
-    public constructor(trkpt: Point[], extensions: Extensions | null = null) {
+    public constructor(trkpt: Point[], extensions?: Extensions) {
         this.trkpt = trkpt;
-        this.extensions = extensions || null;
+        this.extensions = extensions;
     }
 
     public setPoints(trkpt: Point[]): this {
