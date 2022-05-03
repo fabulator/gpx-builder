@@ -3,30 +3,30 @@ import Link from './Link';
 import Segment from './Segment';
 
 export default class Track {
-    private name: string | null;
+    private name?: string;
 
-    private cmt: string | null;
+    private cmt?: string;
 
-    private desc: string | null;
+    private desc?: string;
 
-    private src: string | null;
+    private src?: string;
 
-    private link: Link | null;
+    private link?: Link;
 
-    private number: number | null;
+    private number?: number;
 
-    private type: string | null;
+    private type?: string;
 
-    private extensions: Extensions | null;
+    private extensions?: Extensions;
 
-    private trkseg: Segment[] | null;
+    private trkseg?: Segment[];
 
     /**
      * @see http://www.topografix.com/gpx/1/1/#type_trkType
      */
     // eslint-disable-next-line complexity
     public constructor(
-        trkseg: Segment[] | null,
+        trkseg?: Segment[],
         {
             name,
             cmt,
@@ -47,18 +47,18 @@ export default class Track {
             type?: string;
         } = {},
     ) {
-        this.name = name || null;
-        this.cmt = cmt || null;
-        this.desc = desc || null;
-        this.src = src || null;
-        this.link = link || null;
-        this.number = number || null;
-        this.type = type || null;
-        this.extensions = extensions || null;
-        this.trkseg = trkseg || null;
+        this.name = name;
+        this.cmt = cmt;
+        this.desc = desc;
+        this.src = src;
+        this.link = link;
+        this.number = number;
+        this.type = type;
+        this.extensions = extensions;
+        this.trkseg = trkseg;
     }
 
-    public setSegments(trkseg: Segment[] | null): this {
+    public setSegments(trkseg?: Segment[]): this {
         this.trkseg = trkseg;
         return this;
     }
@@ -73,7 +73,7 @@ export default class Track {
             ...(desc ? { desc } : {}),
             ...(src ? { src } : {}),
             ...(link ? { link: link.toObject() } : {}),
-            ...(number ? { number } : {}),
+            ...(typeof number === 'number' ? { number } : {}),
             ...(type ? { type } : {}),
             ...(extensions ? { extensions } : {}),
             ...(trkseg ? { trkseg: trkseg.map((segment) => segment.toObject()) } : {}),
