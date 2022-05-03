@@ -1,7 +1,6 @@
-/* eslint-disable no-useless-escape */
 /* eslint-disable max-len */
 import { buildGPX, GarminBuilder } from '../src';
-import { Bounds, Copyright, Link, Metadata, Person, Route } from '../src/builder/BaseBuilder/models';
+import { Bounds, Copyright, Link, Metadata, Person } from '../src/builder/BaseBuilder/models';
 import GarminPoint from '../src/builder/GarminBuilder/models/GarminPoint';
 
 describe('Test Garmin builder', () => {

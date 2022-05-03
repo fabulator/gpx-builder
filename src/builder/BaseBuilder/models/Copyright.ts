@@ -25,7 +25,7 @@ export default class Copyright {
     ) {
         this.author = author;
         this.year = year;
-        this.license = license ;
+        this.license = license;
     }
 
     public toObject(): CopyrightData {
