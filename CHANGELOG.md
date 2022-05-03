@@ -1,6 +1,26 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v5.0.0 (2022-05-03)
+### Changed
+- [a0bdc96](https://github.com/fabulator/gpx-builder/commit/a0bdc96d2b1583a0b0664736e9be87cd9a0b276b) Migrate to xmlbuilder2, fix falsey number nodes/attributes BREAKING
+
+* migrate to xmlbuilder2 for better bundler compatibility
+
+* fix falsey number values and add tests
+
+* Fixed: migrate to xmlbuilder2  and fix falsey number nodes/attributes
+
+Migrate to xmlbuilder2 for better bundler compatibility
+Fix falsey number nodes/attributes
+
+Co-authored-by: Michal Ozogan <michal@ozogan.eu>
+
+### Fixed
+- [ddbbe41](https://github.com/fabulator/gpx-builder/commit/ddbbe41f7ec4f5a76b5ea433915182048cb0d373) Update lock to make security bots happy. (#120) 
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+
 ## v4.1.0 (2022-04-02)
 ### Changed
 - [8a00cbb](https://github.com/fabulator/gpx-builder/commit/8a00cbb01f75132810a96c2012ed347317edec1a) Update dev dependencies 
