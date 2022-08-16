@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "babel-config-fabulator": "^1.4.23",
-    "commitlint-config-fabulator": "^3.0.0",
+    "commitlint-config-fabulator": "^5.0.0",
     "eslint-config-fabulator": "^1.4.0",
     "husky": "^8.0.1",
     "jest-config-fabulator": "^1.2.0",
