@@ -42,7 +42,7 @@
     "eslint-config-fabulator": "^1.4.0",
     "husky": "^8.0.1",
     "jest-config-fabulator": "^1.2.0",
-    "rollup-config-fabulator": "^1.2.13",
+    "rollup-config-fabulator": "^2.0.0",
     "semantic-release-config-fabulator": "^4.0.0"
   }
 }
