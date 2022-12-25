@@ -1,4 +1,4 @@
-import { buildGPX } from '../dist';
+import { buildGPX } from '../src';
 import { _experimentalParseGpx } from '../src/parser/parser';
 
 describe('parser', () => {
