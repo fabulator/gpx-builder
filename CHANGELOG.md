@@ -1,6 +1,8 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v5.1.1 (2022-12-25)
+
 ## v5.1.0 (2022-12-25)
 ### Added
 - [2c8f923](https://github.com/fabulator/gpx-builder/commit/2c8f92365aa566629cbfcea782430ec9fa68b7d5) Experimental gpx parsing function
