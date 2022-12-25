@@ -1,6 +1,30 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v5.1.0 (2022-12-25)
+### Added
+- [2c8f923](https://github.com/fabulator/gpx-builder/commit/2c8f92365aa566629cbfcea782430ec9fa68b7d5) Experimental gpx parsing function
+
+### Changed
+- [2ce05ee](https://github.com/fabulator/gpx-builder/commit/2ce05ee680b61dfef4623754023dd9636633bc31) Update dev dependency eslint-config-fabulator to v2  (#163)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [c3033a3](https://github.com/fabulator/gpx-builder/commit/c3033a3dcb9914cad362e0757c995a0c720a21f4) Update dev dependency semantic-release-config-fabulator to v5  (#156)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [dffca80](https://github.com/fabulator/gpx-builder/commit/dffca8029bac6b5d1e70243584e55bd0e3125c5b) Update dev dependency rollup-config-fabulator to v2  (#155)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [e84715f](https://github.com/fabulator/gpx-builder/commit/e84715fc99fc75fcba8df7f9afcfb5ee493cf35c) Update dev dependency commitlint-config-fabulator to v5  (#152)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [47fe023](https://github.com/fabulator/gpx-builder/commit/47fe023896eb39052868728143f498db241af957) Update dev dependency semantic-release-config-fabulator to v4  (#153)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [da73bef](https://github.com/fabulator/gpx-builder/commit/da73bef37b48999508aa2e14a64908365d347fe8) Update dev dependency husky to v8  (#134)
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+
 ## v5.0.0 (2022-05-03)
 ### Changed
 - [a0bdc96](https://github.com/fabulator/gpx-builder/commit/a0bdc96d2b1583a0b0664736e9be87cd9a0b276b) Migrate to xmlbuilder2, fix falsey number nodes/attributes BREAKING
