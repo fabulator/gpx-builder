@@ -33,14 +33,14 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@babel/runtime": "^7.17.8",
+    "@babel/runtime": "^7.20.7",
     "xmlbuilder2": "^3.0.2"
   },
   "devDependencies": {
     "babel-config-fabulator": "^1.4.23",
     "commitlint-config-fabulator": "^5.0.0",
-    "eslint-config-fabulator": "^2.0.0",
-    "husky": "^8.0.1",
+    "eslint-config-fabulator": "^2.2.1",
+    "husky": "^8.0.2",
     "jest-config-fabulator": "^1.2.0",
     "rollup-config-fabulator": "^2.0.0",
     "semantic-release-config-fabulator": "^5.0.0"
