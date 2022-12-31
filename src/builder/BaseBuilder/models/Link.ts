@@ -18,7 +18,7 @@ export default class Link {
         }: {
             text?: string;
             type?: string;
-        },
+        } = {},
     ) {
         this.href = href;
         this.text = text;

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any,@typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-argument */
 import { create } from 'xmlbuilder2';
 import BaseBuilder from '../builder/BaseBuilder';
-import { Point, Route, Segment, Track } from '../builder/BaseBuilder/models';
+import { Link, Point, Route, Segment, Track } from '../builder/BaseBuilder/models';
 
 const getArrayOrNothing = (source: any): any[] | undefined => {
     if (Array.isArray(source)) {
@@ -22,6 +22,19 @@ const getPoints = (source: any) => {
                 name: item.name,
                 sym: item.sym,
                 type: item.type,
+                fix: item.fix != null ? Number(item.fix) : undefined,
+                cmt: item.cmt,
+                desc: item.desc,
+                src: item.src,
+                dgpsid: item.dgpsid != null ? Number(item.dgpsid) : undefined,
+                ageofdgpsdata: item.ageofdgpsdata != null ? Number(item.ageofdgpsdata) : undefined,
+                hdop: item.hdop != null ? Number(item.hdop) : undefined,
+                sat: item.sat != null ? Number(item.sat) : undefined,
+                pdop: item.pdop != null ? Number(item.pdop) : undefined,
+                magvar: item.magvar != null ? Number(item.magvar) : undefined,
+                vdop: item.vdop != null ? Number(item.vdop) : undefined,
+                geoidheight: item.geoidheight != null ? Number(item.geoidheight) : undefined,
+                link: item.link ? new Link(item.link['@href']) : undefined,
             });
         }) || []
     );
