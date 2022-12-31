@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v5.2.0 (2022-12-31)
+### Changed
+- [e60c7ed](https://github.com/fabulator/gpx-builder/commit/e60c7edad874fe0d4556ccb02b8ffbf22e4e5b90) Added new properties for waypoint experimental parsing.
+
 ## v5.1.1 (2022-12-25)
 
 ## v5.1.0 (2022-12-25)
