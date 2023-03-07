@@ -23,7 +23,7 @@ describe('parser', () => {
     it('parses waypoint', () => {
         const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <gpx creator="fabulator:gpx-builder" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
-  <wpt lat="50.304342834278941" lon="12.176031740382314">
+  <wpt lat="50.30434283427894" lon="12.176031740382314">
     <time>2022-12-23T17:22:36.000Z</time>
     <name>Start</name>
     <cmt>Poznamkax</cmt>
