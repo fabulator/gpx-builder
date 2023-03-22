@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v5.2.1 (2023-03-22)
+### Fixed
+- [3db52c3](https://github.com/fabulator/gpx-builder/commit/3db52c3ad05e9a5036efaa39413aed76ac4bee15) parser lat and lon types (#179)
+
+Fix the parser to set the latitude and longitude as numbers, instead of strings.
+
 ## v5.2.0 (2022-12-31)
 ### Changed
 - [e60c7ed](https://github.com/fabulator/gpx-builder/commit/e60c7edad874fe0d4556ccb02b8ffbf22e4e5b90) Added new properties for waypoint experimental parsing.
