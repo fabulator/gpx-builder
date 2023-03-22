@@ -16,7 +16,7 @@ const getArrayOrNothing = (source: any): any[] | undefined => {
 const getPoints = (source: any) => {
     return (
         getArrayOrNothing(source)?.map((item) => {
-            return new Point(item['@lat'], item['@lon'], {
+            return new Point(Number(item['@lat']), Number(item['@lon']), {
                 ele: item.ele != null ? Number(item.ele) : undefined,
                 time: item.time ? new Date(item.time) : undefined,
                 name: item.name,
