@@ -43,6 +43,6 @@
     "husky": "^8.0.2",
     "jest-config-fabulator": "^1.2.0",
     "rollup-config-fabulator": "^2.0.0",
-    "semantic-release-config-fabulator": "^5.1.1"
+    "semantic-release-config-fabulator": "^6.0.0"
   }
 }
