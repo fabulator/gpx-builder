@@ -14,16 +14,16 @@ export default class GarminBuilder extends BaseBuilder {
         super();
         this.schemaLocation = [
             ...this.schemaLocation,
-            'http://www.garmin.com/xmlschemas/TrackPointExtension/v1',
-            'http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd',
+            'http://www.garmin.com/xmlschemas/TrackPointExtension/v2',
+            'https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd',
             'http://www.garmin.com/xmlschemas/GpxExtensions/v3',
-            'http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd',
+            'https://www8.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd',
         ];
         this.data = {
             ...this.data,
             attributes: {
                 ...this.data.attributes,
-                'xmlns:gpxtpx': 'http://www.garmin.com/xmlschemas/TrackPointExtension/v1',
+                'xmlns:gpxtpx': 'http://www.garmin.com/xmlschemas/TrackPointExtension/v2',
                 'xmlns:gpxx': 'http://www.garmin.com/xmlschemas/GpxExtensions/v3',
             },
         };
