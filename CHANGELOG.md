@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v5.3.0 (2023-12-20)
+### Changed
+- [3a844a7](https://github.com/fabulator/gpx-builder/commit/3a844a7a0f5d01fe4c95c29ec881373933bd6b0b) Garmin schema locations (#216)
+- [5f600d6](https://github.com/fabulator/gpx-builder/commit/5f600d623f92cf019cfbab6ad840868e360bed22) Update dev dependency semantic-release-config-fabulator to v6  (#183)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [917fdd0](https://github.com/fabulator/gpx-builder/commit/917fdd0f7f02de2751c08641553bce455cce89b8) Update dev dependency eslint-config-fabulator to v3  (#182)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+
 ## v5.2.1 (2023-03-22)
 ### Fixed
 - [3db52c3](https://github.com/fabulator/gpx-builder/commit/3db52c3ad05e9a5036efaa39413aed76ac4bee15) parser lat and lon types (#179)
