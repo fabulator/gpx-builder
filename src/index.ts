@@ -10,8 +10,8 @@ import { GPXBuildData } from './types';
  * @returns XML string
  */
 function buildGPX(data: GPXBuildData, creator?: CreatorInterface): string {
-    const gpxCreator = creator || new XMLCreator();
-    return gpxCreator.toString(data);
+  const gpxCreator = creator || new XMLCreator();
+  return gpxCreator.toString(data);
 }
 
 export { buildGPX };

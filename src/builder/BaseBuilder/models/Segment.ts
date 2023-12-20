@@ -2,29 +2,29 @@ import { Extensions, TrackSegment } from '../../../types';
 import Point from './Point';
 
 export default class Segment {
-    private trkpt: Point[];
+  private trkpt: Point[];
 
-    private extensions?: Extensions;
+  private extensions?: Extensions;
 
-    /**
-     * @see http://www.topografix.com/gpx/1/1/#type_trksegType
-     */
-    public constructor(trkpt: Point[], extensions?: Extensions) {
-        this.trkpt = trkpt;
-        this.extensions = extensions;
-    }
+  /**
+   * @see http://www.topografix.com/gpx/1/1/#type_trksegType
+   */
+  public constructor(trkpt: Point[], extensions?: Extensions) {
+    this.trkpt = trkpt;
+    this.extensions = extensions;
+  }
 
-    public setPoints(trkpt: Point[]): this {
-        this.trkpt = trkpt;
-        return this;
-    }
+  public setPoints(trkpt: Point[]): this {
+    this.trkpt = trkpt;
+    return this;
+  }
 
-    public toObject(): TrackSegment {
-        const { trkpt, extensions } = this;
+  public toObject(): TrackSegment {
+    const { trkpt, extensions } = this;
 
-        return {
-            trkpt: trkpt.map((point) => point.toObject()),
-            ...(extensions ? { extensions } : {}),
-        };
-    }
+    return {
+      trkpt: trkpt.map((point) => point.toObject()),
+      ...(extensions ? { extensions } : {}),
+    };
+  }
 }
