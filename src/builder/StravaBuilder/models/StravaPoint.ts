@@ -3,7 +3,7 @@ import GarminPoint, {
   GarminPointOptions,
 } from '../../GarminBuilder/models/GarminPoint';
 
-interface StravaPointOptions extends GarminPointOptions {
+export interface StravaPointOptions extends GarminPointOptions {
   distance?: number;
   power?: number;
 }
