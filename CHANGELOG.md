@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v5.4.0 (2024-11-19)
+### Changed
+- [7d6cb5a](https://github.com/fabulator/gpx-builder/commit/7d6cb5ae4f6f3632e7b11550afe6e3a74efe468c) export the StravaPointsOptions interface (#227)
+
 ## v5.3.0 (2023-12-20)
 ### Changed
 - [3a844a7](https://github.com/fabulator/gpx-builder/commit/3a844a7a0f5d01fe4c95c29ec881373933bd6b0b) Garmin schema locations (#216)
