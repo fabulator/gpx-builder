@@ -13,7 +13,7 @@ export default class BaseBuilder {
     this.data = {};
     this.schemaLocation = [
       'http://www.topografix.com/GPX/1/1',
-      'http://www.topografix.com/GPX/1/1/gpx.xsd',
+      'https://www.topografix.com/GPX/1/1/gpx.xsd',
     ];
   }
 

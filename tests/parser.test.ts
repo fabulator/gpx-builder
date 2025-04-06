@@ -4,7 +4,7 @@ import { _experimentalParseGpx } from '../src/parser/parser';
 describe('parser', () => {
   it('parses routes', () => {
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<gpx creator="fabulator:gpx-builder" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<gpx creator="fabulator:gpx-builder" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd">
   <rte>
     <rtept lat="51.02832496166229" lon="15.515156626701355">
       <ele>314.715</ele>
@@ -22,7 +22,7 @@ describe('parser', () => {
 
   it('parses waypoint', () => {
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<gpx creator="fabulator:gpx-builder" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<gpx creator="fabulator:gpx-builder" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd">
   <wpt lat="50.30434283427894" lon="12.176031740382314">
     <time>2022-12-23T17:22:36.000Z</time>
     <name>Start</name>
