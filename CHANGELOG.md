@@ -1,6 +1,18 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v5.5.0 (2025-04-08)
+### Fixed
+- [1586c9c](https://github.com/fabulator/gpx-builder/commit/1586c9ce405ec4971c3bf9561df5548404061fb3) Use HTTPS location for gpx.xsd (#234)
+
+### Changed
+- [3c0cc3d](https://github.com/fabulator/gpx-builder/commit/3c0cc3d9f6f2418d4124006680f68b7551f18140) Update Github Flow  dependency node to v20.19.0 (#232)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [ed819d3](https://github.com/fabulator/gpx-builder/commit/ed819d34a6b3855e5cff1501618aa5b03a07627b) Update Github Flow  dependency node to v20.18.3 (#230)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+
 ## v5.4.0 (2024-11-19)
 ### Changed
 - [7d6cb5a](https://github.com/fabulator/gpx-builder/commit/7d6cb5ae4f6f3632e7b11550afe6e3a74efe468c) export the StravaPointsOptions interface (#227)
