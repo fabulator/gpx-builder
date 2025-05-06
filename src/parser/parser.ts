@@ -1,13 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any,@typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-argument */
 import { create } from 'xmlbuilder2';
 import BaseBuilder from '../builder/BaseBuilder';
-import {
-  Link,
-  Point,
-  Route,
-  Segment,
-  Track,
-} from '../builder/BaseBuilder/models';
+import { Link, Route, Segment, Track } from '../builder/BaseBuilder/models';
+import StravaBuilder from '../builder/StravaBuilder';
 
 const getArrayOrNothing = (source: any): any[] | undefined => {
   if (Array.isArray(source)) {
@@ -22,28 +17,33 @@ const getArrayOrNothing = (source: any): any[] | undefined => {
 const getPoints = (source: any) => {
   return (
     getArrayOrNothing(source)?.map((item) => {
-      return new Point(Number(item['@lat']), Number(item['@lon']), {
-        ageofdgpsdata:
-          item.ageofdgpsdata != null ? Number(item.ageofdgpsdata) : undefined,
-        cmt: item.cmt,
-        desc: item.desc,
-        dgpsid: item.dgpsid != null ? Number(item.dgpsid) : undefined,
-        ele: item.ele != null ? Number(item.ele) : undefined,
-        fix: item.fix != null ? Number(item.fix) : undefined,
-        geoidheight:
-          item.geoidheight != null ? Number(item.geoidheight) : undefined,
-        hdop: item.hdop != null ? Number(item.hdop) : undefined,
-        link: item.link ? new Link(item.link['@href']) : undefined,
-        magvar: item.magvar != null ? Number(item.magvar) : undefined,
-        name: item.name,
-        pdop: item.pdop != null ? Number(item.pdop) : undefined,
-        sat: item.sat != null ? Number(item.sat) : undefined,
-        src: item.src,
-        sym: item.sym,
-        time: item.time ? new Date(item.time) : undefined,
-        type: item.type,
-        vdop: item.vdop != null ? Number(item.vdop) : undefined,
-      });
+      return new StravaBuilder.MODELS.Point(
+        Number(item['@lat']),
+        Number(item['@lon']),
+        {
+          ageofdgpsdata:
+            item.ageofdgpsdata != null ? Number(item.ageofdgpsdata) : undefined,
+          cmt: item.cmt,
+          desc: item.desc,
+          dgpsid: item.dgpsid != null ? Number(item.dgpsid) : undefined,
+          ele: item.ele != null ? Number(item.ele) : undefined,
+          extensions: item.extensions,
+          fix: item.fix != null ? Number(item.fix) : undefined,
+          geoidheight:
+            item.geoidheight != null ? Number(item.geoidheight) : undefined,
+          hdop: item.hdop != null ? Number(item.hdop) : undefined,
+          link: item.link ? new Link(item.link['@href']) : undefined,
+          magvar: item.magvar != null ? Number(item.magvar) : undefined,
+          name: item.name,
+          pdop: item.pdop != null ? Number(item.pdop) : undefined,
+          sat: item.sat != null ? Number(item.sat) : undefined,
+          src: item.src,
+          sym: item.sym,
+          time: item.time ? new Date(item.time) : undefined,
+          type: item.type,
+          vdop: item.vdop != null ? Number(item.vdop) : undefined,
+        },
+      );
     }) || []
   );
 };
@@ -72,7 +72,7 @@ const getTracks = (source: any) => {
 };
 
 // eslint-disable-next-line canonical/id-match
-export const _experimentalParseGpx = (gpx: string): BaseBuilder => {
+export const _experimentalParseGpx = (gpx: string): StravaBuilder => {
   const parsed = create(gpx).toObject() as any;
 
   if (!parsed.gpx) {
