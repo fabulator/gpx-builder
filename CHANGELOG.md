@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v5.6.0 (2025-05-06)
+### Changed
+- [cc8bbc6](https://github.com/fabulator/gpx-builder/commit/cc8bbc686805aa28e86c37ec3dcce066ef4c64d1) Make experimental parser understand Strava activities GPX
+- [8f6c68c](https://github.com/fabulator/gpx-builder/commit/8f6c68ca55a210edd8602303a165be190b7ddb3c) Update Github Flow  dependency node to v20.19.1 (#235)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+
 ## v5.5.0 (2025-04-08)
 ### Fixed
 - [1586c9c](https://github.com/fabulator/gpx-builder/commit/1586c9ce405ec4971c3bf9561df5548404061fb3) Use HTTPS location for gpx.xsd (#234)
