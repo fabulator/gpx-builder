@@ -33,7 +33,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@babel/runtime": "^7.23.6",
+    "@babel/runtime": "^7.26.10",
     "xmlbuilder2": "^3.1.1"
   },
   "devDependencies": {
