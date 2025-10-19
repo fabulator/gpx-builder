@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.23.6",
-    "xmlbuilder2": "^3.1.1"
+    "xmlbuilder2": "^4.0.0"
   },
   "devDependencies": {
     "babel-config-fabulator": "^1.4.23",
