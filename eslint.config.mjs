@@ -6,9 +6,9 @@ import config from 'eslint-config-fabulator';
 const ignores = globalIgnores([
   '**/dist/*',
   '*.json',
-  'dev/*',
+  'es/*',
+  'dist/*',
   '.idea/*',
-  '.run/*',
 ]);
 
 export default defineConfig([
