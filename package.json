@@ -41,7 +41,6 @@
     "eslint": "^9.38.0",
     "eslint-config-fabulator": "^5.2.0",
     "husky": "^9.1.7",
-    "jest-fixed-jsdom": "^0.0.10",
     "rollup-config-fabulator": "^2.0.0",
     "semantic-release-config-fabulator": "^7.0.0",
     "vitest": "^4.0.5"
