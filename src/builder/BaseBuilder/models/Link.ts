@@ -1,6 +1,6 @@
 import { Link as LinkData } from '../../../types';
 
-export default class Link {
+export class Link {
   private href: string;
 
   private text?: string;

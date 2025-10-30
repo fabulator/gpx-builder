@@ -16,7 +16,7 @@ function buildGPX(data: GPXBuildData, creator?: CreatorInterface): string {
 
 export { buildGPX };
 
-export { default as BaseBuilder } from './builder/BaseBuilder';
+export { BaseBuilder } from './builder/BaseBuilder';
 export * from './parser/parser';
-export { default as StravaBuilder } from './builder/StravaBuilder';
-export { default as GarminBuilder } from './builder/GarminBuilder';
+export { StravaBuilder } from './builder/StravaBuilder';
+export { GarminBuilder } from './builder/GarminBuilder';

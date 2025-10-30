@@ -1,6 +1,6 @@
 import { Bounds as BoundsData } from '../../../types';
 
-export default class Bounds {
+export class Bounds {
   private minlat: number;
 
   private minlon: number;
