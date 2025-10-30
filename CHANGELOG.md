@@ -1,6 +1,41 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v6.0.0 (2025-10-30)
+### Changed
+- [1a1dee6](https://github.com/fabulator/gpx-builder/commit/1a1dee68ac4a78067fc16c6854494956e8f3afbe) Update dependency xmlbuilder2 to v4 BREAKING
+- [aedb989](https://github.com/fabulator/gpx-builder/commit/aedb989a41e923387cd8fd967605d692e3b01182) Update Github Flow 
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [d15bb26](https://github.com/fabulator/gpx-builder/commit/d15bb267fe482cf48ab22477441a580dbab35cf5) Update dev dependency eslint-config-fabulator to v5 
+- [180f8a6](https://github.com/fabulator/gpx-builder/commit/180f8a641b60d31cca6c36627896c88b5aad99c7) Update Github Flow  dependency node to v22.21.0 (#245)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [3b40678](https://github.com/fabulator/gpx-builder/commit/3b4067845c0fc17f22962b689dc8ffb27c6d3c2f) Update Github Flow  actions/setup-node action to v6 (#243)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [20feb08](https://github.com/fabulator/gpx-builder/commit/20feb0811483138c09576b77fb364475a7127ca7) Update dev dependency husky to v9  (#226)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [fd4da12](https://github.com/fabulator/gpx-builder/commit/fd4da126d395a77e1e86d4c320716c217016410f) Update Github Flow  dependency node to v22 (#231)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [bb1fef6](https://github.com/fabulator/gpx-builder/commit/bb1fef6cc48e0f16e34f4d725fadb02722086659) Update Github Flow  actions/checkout action to v5 (#240)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [1831028](https://github.com/fabulator/gpx-builder/commit/183102825e6b269e313e9b3294844a12750fc9b5) Update Github Flow  dependency node to v20.19.5 (#242)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [cfa873d](https://github.com/fabulator/gpx-builder/commit/cfa873deb6bafd4bc34c17c4d5dce6f3df62f0d6) Update Github Flow  dependency node to v20.19.4 (#239)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [bcfbcf3](https://github.com/fabulator/gpx-builder/commit/bcfbcf324b661bbccde3a058d954b4acbaaa2ce9) Update Github Flow  dependency node to v20.19.3 (#238)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [82c5b38](https://github.com/fabulator/gpx-builder/commit/82c5b3841e46c6bd0b13cbc6700602020d7e63c9) Update Github Flow  dependency node to v20.19.2 (#237)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+
 ## v5.6.0 (2025-05-06)
 ### Changed
 - [cc8bbc6](https://github.com/fabulator/gpx-builder/commit/cc8bbc686805aa28e86c37ec3dcce066ef4c64d1) Make experimental parser understand Strava activities GPX
