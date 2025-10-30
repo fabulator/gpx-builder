@@ -4,11 +4,9 @@ import { XMLBuilder } from 'xmlbuilder2/lib/interfaces';
 import { GPXBuildData } from '../types';
 import { CreatorInterface } from './CreatorInterface';
 
-interface Settings {
-  [key: string]: string | boolean;
-}
+type Settings = Record<string, string | boolean>;
 
-export default class XMLCreator implements CreatorInterface {
+export class XMLCreator implements CreatorInterface {
   private settings: Settings;
 
   public constructor(settings: Settings = {}) {

@@ -1,7 +1,7 @@
 import { Extensions, TrackSegment } from '../../../types';
-import Point from './Point';
+import { Point } from './Point';
 
-export default class Segment {
+export class Segment {
   private trkpt: Point[];
 
   private extensions?: Extensions;

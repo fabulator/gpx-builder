@@ -1,8 +1,8 @@
 import { Extensions, Track as TrackData } from '../../../types';
-import Link from './Link';
-import Segment from './Segment';
+import { Link } from './Link';
+import { Segment } from './Segment';
 
-export default class Track {
+export class Track {
   private name?: string;
 
   private cmt?: string;

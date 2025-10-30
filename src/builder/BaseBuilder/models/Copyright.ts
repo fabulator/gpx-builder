@@ -1,6 +1,6 @@
 import { Copyright as CopyrightData } from '../../../types';
 
-export default class Copyright {
+export class Copyright {
   private author: string;
 
   private year?: number;

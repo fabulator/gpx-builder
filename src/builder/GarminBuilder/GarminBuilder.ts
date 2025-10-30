@@ -1,7 +1,7 @@
-import BaseBuilder from '../BaseBuilder';
-import GarminPoint from './models/GarminPoint';
+import { BaseBuilder } from '../BaseBuilder';
+import { GarminPoint } from './models/GarminPoint';
 
-export default class GarminBuilder extends BaseBuilder {
+export class GarminBuilder extends BaseBuilder {
   public static MODELS = {
     ...BaseBuilder.MODELS,
     Point: GarminPoint,

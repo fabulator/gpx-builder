@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any,@typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-argument */
 import { create } from 'xmlbuilder2';
-import BaseBuilder from '../builder/BaseBuilder';
+import { BaseBuilder } from '../builder/BaseBuilder';
 import { Link, Route, Segment, Track } from '../builder/BaseBuilder/models';
-import StravaBuilder from '../builder/StravaBuilder';
+import { StravaBuilder } from '../builder/StravaBuilder';
 
 const getArrayOrNothing = (source: any): any[] | undefined => {
   if (Array.isArray(source)) {
@@ -71,7 +71,6 @@ const getTracks = (source: any) => {
   });
 };
 
-// eslint-disable-next-line canonical/id-match
 export const _experimentalParseGpx = (gpx: string): StravaBuilder => {
   const parsed = create(gpx).toObject() as any;
 

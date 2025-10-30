@@ -1,5 +1,6 @@
 import { Extensions } from '../../../types';
-import GarminPoint, {
+import {
+  GarminPoint,
   GarminPointOptions,
 } from '../../GarminBuilder/models/GarminPoint';
 
@@ -8,7 +9,7 @@ export interface StravaPointOptions extends GarminPointOptions {
   power?: number;
 }
 
-export default class StravaPoint extends GarminPoint {
+export class StravaPoint extends GarminPoint {
   public constructor(
     lat: number,
     lon: number,

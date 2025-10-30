@@ -1,3 +1,3 @@
 module.exports = {
-    extends: 'babel-config-fabulator',
+  extends: 'babel-config-fabulator',
 };

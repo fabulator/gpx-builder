@@ -1,7 +1,7 @@
 import { Extensions, Link, Route as RouteData } from '../../../types';
-import Point from './Point';
+import { Point } from './Point';
 
-export default class Route {
+export class Route {
   private cmt?: string;
 
   private desc?: string;

@@ -1,9 +1,9 @@
-export { default as Bounds } from './Bounds';
-export { default as Link } from './Link';
-export { default as Copyright } from './Copyright';
-export { default as Person } from './Person';
-export { default as Metadata } from './Metadata';
-export { default as Route } from './Route';
-export { default as Point } from './Point';
-export { default as Track } from './Track';
-export { default as Segment } from './Segment';
+export { Bounds } from './Bounds';
+export { Link } from './Link';
+export { Copyright } from './Copyright';
+export { Person } from './Person';
+export { Metadata } from './Metadata';
+export { Route } from './Route';
+export { Point } from './Point';
+export { Track } from './Track';
+export { Segment } from './Segment';
