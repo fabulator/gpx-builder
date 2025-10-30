@@ -18,7 +18,6 @@ export default defineConfig([
     languageOptions: {
       sourceType: 'module',
       parserOptions: {
-        //projectService: true,
         tsconfigRootDir: import.meta.dirname,
         project: './tsconfig.eslint.json',
       },

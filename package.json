@@ -21,7 +21,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rollup --config ./rollup.config.js",
-    "lint": "eslint ./ --ext .js --ext .json --ext .ts",
+    "lint": "eslint ./ --ext .js --ext .json --ext .ts  --ext .mjs",
     "lint:export": "npm run lint -- -o ./tests_results/checkstyle/js-checkstyle.xml -f checkstyle",
     "lint:fix": "npm run lint -- --fix",
     "prepare": "husky install",
