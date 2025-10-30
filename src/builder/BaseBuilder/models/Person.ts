@@ -1,7 +1,7 @@
 import { Person as PersonData } from '../../../types';
-import Link from './Link';
+import { Link } from './Link';
 
-export default class Person {
+export class Person {
   private name?: string;
 
   private email?: string;

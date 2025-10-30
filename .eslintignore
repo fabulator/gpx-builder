@@ -1,6 +1,0 @@
-**/node_modules
-**/dist
-tsconfig.json
-**/dev
-**/es
-package-lock.json

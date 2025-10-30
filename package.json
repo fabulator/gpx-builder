@@ -21,7 +21,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rollup --config ./rollup.config.js",
-    "lint": "eslint ./ --ext .js --ext .json --ext .ts",
+    "lint": "eslint ./ --ext .js --ext .json --ext .ts  --ext .mjs",
     "lint:export": "npm run lint -- -o ./tests_results/checkstyle/js-checkstyle.xml -f checkstyle",
     "lint:fix": "npm run lint -- --fix",
     "prepare": "husky install",
@@ -39,7 +39,8 @@
   "devDependencies": {
     "babel-config-fabulator": "^1.4.23",
     "commitlint-config-fabulator": "^6.1.0",
-    "eslint-config-fabulator": "^4.1.0",
+    "eslint": "^9.38.0",
+    "eslint-config-fabulator": "^5.2.0",
     "husky": "^9.1.7",
     "jest-config-fabulator": "^1.2.0",
     "rollup-config-fabulator": "^2.0.0",

@@ -1,4 +1,4 @@
-import Point, { PointOptions } from '../../BaseBuilder/models/Point';
+import { Point, PointOptions } from '../../BaseBuilder/models/Point';
 
 export interface GarminPointOptions extends PointOptions {
   atemp?: number;
@@ -11,7 +11,7 @@ export interface GarminPointOptions extends PointOptions {
   wtemp?: number;
 }
 
-export default class GarminPoint extends Point {
+export class GarminPoint extends Point {
   /**
    * Extended garmin point.
    *

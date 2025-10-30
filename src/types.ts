@@ -29,9 +29,7 @@ export interface Bounds {
   };
 }
 
-export interface Extensions {
-  [key: string]: { [key: string]: string | number };
-}
+export type Extensions = Record<string, Record<string, string | number>>;
 
 export interface Meta {
   author?: Person;
@@ -101,9 +99,7 @@ export interface Track {
 }
 
 export interface GPXBuildData {
-  attributes?: {
-    [key: string]: string;
-  };
+  attributes?: Record<string, string>;
   extensions?: Extensions;
   metadata?: Meta;
   rte?: Route[];

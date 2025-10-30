@@ -1,3 +1,3 @@
-import BaseBuilder from './BaseBuilder';
+import { BaseBuilder } from './BaseBuilder';
 
-export default BaseBuilder;
+export { BaseBuilder };

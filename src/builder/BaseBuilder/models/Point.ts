@@ -1,5 +1,5 @@
 import { Extensions, WayPoint } from '../../../types';
-import Link from './Link';
+import { Link } from './Link';
 
 export interface PointOptions {
   ageofdgpsdata?: number;
@@ -23,7 +23,7 @@ export interface PointOptions {
   vdop?: number;
 }
 
-export default class Point {
+export class Point {
   protected lat: number;
 
   protected lon: number;
@@ -117,7 +117,6 @@ export default class Point {
     this.extensions = extensions;
   }
 
-  // eslint-disable-next-line sonarjs/cognitive-complexity
   public toObject(): WayPoint {
     const {
       lat,

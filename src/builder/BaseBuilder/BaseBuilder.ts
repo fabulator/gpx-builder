@@ -2,7 +2,7 @@ import { Extensions, GPXBuildData } from '../../types';
 import * as models from './models';
 import { Metadata, Point, Segment, Track, Route } from './models';
 
-export default class BaseBuilder {
+export class BaseBuilder {
   protected data: GPXBuildData;
 
   protected schemaLocation: string[];

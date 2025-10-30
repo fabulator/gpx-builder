@@ -1,10 +1,10 @@
 import { Extensions, Meta } from '../../../types';
-import Bounds from './Bounds';
-import Copyright from './Copyright';
-import Link from './Link';
-import Person from './Person';
+import { Bounds } from './Bounds';
+import { Copyright } from './Copyright';
+import { Link } from './Link';
+import { Person } from './Person';
 
-export default class Metadata {
+export class Metadata {
   private name: string | null;
 
   private desc: string | null;

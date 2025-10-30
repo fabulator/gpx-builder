@@ -1,1 +1,1 @@
-export { default as XMLCreator } from './XMLCreator';
+export { XMLCreator } from './XMLCreator';

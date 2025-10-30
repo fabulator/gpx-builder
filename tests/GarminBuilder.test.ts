@@ -6,7 +6,7 @@ import {
   Metadata,
   Person,
 } from '../src/builder/BaseBuilder/models';
-import GarminPoint from '../src/builder/GarminBuilder/models/GarminPoint';
+import { GarminPoint } from '../src/builder/GarminBuilder/models/GarminPoint';
 
 describe('Test Garmin builder', () => {
   it('create an object', () => {
