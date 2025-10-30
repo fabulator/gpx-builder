@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { buildGPX, GarminBuilder } from '../src';
 import {
   Bounds,

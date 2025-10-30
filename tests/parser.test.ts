@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { buildGPX } from '../src';
 import { _experimentalParseGpx } from '../src/parser/parser';
 

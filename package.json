@@ -25,16 +25,15 @@
     "lint:export": "npm run lint -- -o ./tests_results/checkstyle/js-checkstyle.xml -f checkstyle",
     "lint:fix": "npm run lint -- --fix",
     "prepare": "husky install",
-    "prepublishOnly": "npm run build && npm run tsc && npm run test:build",
+    "prepublishOnly": "npm run build && npm run tsc",
     "release": "semantic-release",
-    "test": "jest",
+    "test": "vitest run",
     "test:all": "npm run lint && npm run tsc && npm run test",
-    "test:build": "npm run test -- --config jest.config.build.js",
     "tsc": "tsc"
   },
   "dependencies": {
     "@babel/runtime": "^7.23.6",
-    "xmlbuilder2": "^3.1.1"
+    "xmlbuilder2": "^4.0.0"
   },
   "devDependencies": {
     "babel-config-fabulator": "^1.4.23",
@@ -42,8 +41,9 @@
     "eslint": "^9.38.0",
     "eslint-config-fabulator": "^5.2.0",
     "husky": "^9.1.7",
-    "jest-config-fabulator": "^1.2.0",
+    "jest-fixed-jsdom": "^0.0.10",
     "rollup-config-fabulator": "^2.0.0",
-    "semantic-release-config-fabulator": "^7.0.0"
+    "semantic-release-config-fabulator": "^7.0.0",
+    "vitest": "^4.0.5"
   }
 }
