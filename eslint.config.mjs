@@ -1,6 +1,4 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { defineConfig, globalIgnores } from 'eslint/config';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import config from 'eslint-config-fabulator';
 
 const ignores = globalIgnores([
