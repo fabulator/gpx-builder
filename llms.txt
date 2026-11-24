@@ -1,0 +1,105 @@
+# gpx-builder
+
+> TypeScript library that builds GPX 1.1 XML strings (waypoints, routes, tracks, metadata) with optional Garmin TrackPointExtension v2 and Strava extensions (heart rate, cadence, speed, temperature, power, distance). Works in Node.js and browsers, ships CommonJS (`dist`), ES modules (`es`) and type declarations. Runtime dependency: `xmlbuilder2`.
+
+Install: `npm install gpx-builder`
+
+## Mental model
+
+1. Pick a builder: `BaseBuilder` (plain GPX 1.1), `GarminBuilder` (+ Garmin extensions), `StravaBuilder` (+ Garmin + Strava `power`, `distance`, `cadence`).
+2. Create model objects from `<Builder>.MODELS` (`Point`, `Segment`, `Track`, `Route`, `Metadata`, `Link`, `Person`, `Copyright`, `Bounds`). Always take `Point` from the **same builder** you use – `GarminBuilder.MODELS.Point` knows `hr`/`cad`/…, `BaseBuilder.MODELS.Point` ignores them.
+3. Fill the builder with setters (all return `this`, so they chain).
+4. Serialize: `buildGPX(builder.toObject())` returns the XML string.
+
+## Exports (package root)
+
+- `buildGPX(data: GPXBuildData, creator?: CreatorInterface): string` – serializes builder data to XML (default creator uses `xmlbuilder2`, pretty printed, with XML declaration).
+- `BaseBuilder`, `GarminBuilder`, `StravaBuilder` – builder classes, each with static `MODELS`.
+- `_experimentalParseGpx(xml: string): BaseBuilder` – parses GPX XML back into a builder (waypoints, routes, tracks; points are `StravaPoint`s). Throws `Error('Invalid format.')` when there is no `<gpx>` root. Garmin/Strava extensions are not parsed into typed fields.
+  - **Not covered by semver.** Everything prefixed `_experimental` may change or be removed in any release, including minor and patch versions. Do not build on it without pinning an exact `gpx-builder` version, and prefer constructing builders directly when you control the input.
+
+Types (`GPXBuildData`, `WayPoint`, `Track`, `Route`, `Meta`, `Extensions`, …) are not re-exported from the root; import them from `gpx-builder/dist/types` if you need them.
+
+## Builder methods (BaseBuilder, inherited by Garmin/Strava)
+
+- `setSegmentPoints(points: Point[])` – shortcut: one track with one segment. Most common call.
+- `setTracks(tracks: Track[])`, `setRoutes(routes: Route[])`, `setWayPoints(points: Point[])`
+- `setMetadata(metadata: Metadata)`, `setExtensions(extensions: Extensions)`
+- `toObject(): GPXBuildData` – plain object consumed by `buildGPX`.
+
+Each setter **replaces** the previous value (it does not append). Collect everything first, then call the setter once.
+
+## Models (constructor signatures)
+
+- `new Point(lat: number, lon: number, options?)` – options: `ele`, `time: Date`, `name`, `cmt`, `desc`, `src`, `sym`, `type`, `link: Link`, `magvar`, `geoidheight`, `fix`, `sat`, `hdop`, `vdop`, `pdop`, `ageofdgpsdata`, `dgpsid`, `extensions`.
+  - Garmin `Point` adds: `hr`, `cad`, `speed`, `atemp`, `wtemp`, `depth`, `course`, `bearing` (written as `gpxtpx:TrackPointExtension`).
+  - Strava `Point` adds: `power`, `distance` (and writes `cad` also as `cadence`). The resulting XML is what Strava accepts, it is **not** schema-valid GPX.
+- `new Segment(points: Point[], extensions?)`
+- `new Track(segments?: Segment[], { name, cmt, desc, src, link, number, type, extensions }?)`
+- `new Route({ name, cmt, desc, src, link, number, type, extensions, rtept?: Point[] })`
+- `new Metadata({ name, desc, author: Person, copyright: Copyright, link: Link, time: Date, keywords, bounds: Bounds, extensions })`
+- `new Link(href: string, { text, type }?)`, `new Person({ name, email, link })`, `new Copyright(author: string, { year, license }?)`, `new Bounds(minlat, minlon, maxlat, maxlon)`
+
+## Examples
+
+Activity with heart rate (ESM; `require('gpx-builder')` works the same in CommonJS):
+
+```ts
+import { buildGPX, GarminBuilder } from 'gpx-builder';
+
+const { Point, Metadata } = GarminBuilder.MODELS;
+
+const gpx = new GarminBuilder()
+  .setMetadata(new Metadata({ name: 'Morning run', time: new Date('2018-06-10T17:29:35Z') }))
+  .setSegmentPoints([
+    new Point(51.0283, 15.5151, { ele: 314.7, time: new Date('2018-06-10T17:29:35Z'), hr: 120 }),
+    new Point(51.1283, 15.6151, { ele: 315.2, time: new Date('2018-06-10T17:39:35Z'), hr: 121 }),
+  ]);
+
+const xml = buildGPX(gpx.toObject());
+```
+
+Multiple tracks/segments, waypoints and a route with the plain builder:
+
+```ts
+import { buildGPX, BaseBuilder } from 'gpx-builder';
+
+const { Point, Segment, Track, Route } = BaseBuilder.MODELS;
+
+const xml = buildGPX(
+  new BaseBuilder()
+    .setWayPoints([new Point(50.08, 14.42, { name: 'Start', sym: 'Flag, Blue' })])
+    .setRoutes([new Route({ name: 'Plan', rtept: [new Point(50.08, 14.42), new Point(50.09, 14.43)] })])
+    .setTracks([
+      new Track([new Segment([new Point(50.08, 14.42)]), new Segment([new Point(50.09, 14.43)])], { name: 'Ride' }),
+    ])
+    .toObject(),
+);
+```
+
+Strava upload with power:
+
+```ts
+import { buildGPX, StravaBuilder } from 'gpx-builder';
+
+const { Point } = StravaBuilder.MODELS;
+const xml = buildGPX(
+  new StravaBuilder()
+    .setSegmentPoints([new Point(51.0283, 15.5151, { time: new Date(), hr: 140, cad: 90, power: 250, distance: 0 })])
+    .toObject(),
+);
+```
+
+## Gotchas
+
+- `time` must be a `Date` object, not a string; it is serialized as ISO 8601 UTC.
+- Latitude/longitude are not validated – pass decimal degrees (WGS84).
+- Extension values are only written when they are numbers (`hr: undefined` is skipped, `hr: '120'` is skipped too).
+- `buildGPX` returns a string; writing a file is up to you (`fs.writeFileSync('out.gpx', xml)` in Node, `new Blob([xml], { type: 'application/gpx+xml' })` in the browser).
+- A custom serializer can be passed as the second argument of `buildGPX` – any object implementing `toString(data: GPXBuildData): string`.
+
+## Links
+
+- Source: https://github.com/fabulator/gpx-builder
+- GPX 1.1 schema: https://www.topografix.com/GPX/1/1/
+- Garmin TrackPointExtension v2: https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd

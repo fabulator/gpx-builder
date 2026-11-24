@@ -71,7 +71,7 @@ const getTracks = (source: any) => {
   });
 };
 
-export const _experimentalParseGpx = (gpx: string): StravaBuilder => {
+export const _experimentalParseGpx = (gpx: string): BaseBuilder => {
   const parsed = create(gpx).toObject() as any;
 
   if (!parsed.gpx) {

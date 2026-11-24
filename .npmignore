@@ -2,6 +2,10 @@ renovate.json
 tests
 dev
 tests_results
-tsconfig.json
+tsconfig*.json
 .*
 *.config.*
+vite.setup.ts
+CLAUDE.md
+AGENTS.md
+test.js
