@@ -2,22 +2,18 @@
   "compilerOptions": {
     "declaration": true,
     "emitDeclarationOnly": true,
+    "rootDir": "./src",
     "declarationDir": "./dist",
-    "baseUrl": ".",
-    "paths": {
-      "*": [
-        "*",
-        "src/*",
-        "tests/*"
-      ]
-    },
     "lib": [
       "dom",
       "esnext"
     ],
     "module": "commonjs",
     "target": "esnext",
-    "strict": true
+    "strict": true,
+    "types": [
+      "node"
+    ]
   },
   "include": [
     "src/**/*"
