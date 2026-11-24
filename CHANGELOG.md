@@ -1,6 +1,86 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v6.1.0 (2026-11-24)
+### Fixed
+- [62e0ef0](https://github.com/fabulator/gpx-builder/commit/62e0ef0ac78c5e61b29426a01685df6a4acacf88) Update build tooling and CI (#276)
+
+* Fixed: Update build tooling and CI
+
+- Babel 8, Rollup 4, TypeScript 6, ESLint 10, Vitest 5
+- Correct _experimentalParseGpx return type (it returns BaseBuilder)
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+* Docs: Add llms.txt usage reference for agents and CLAUDE.md
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+---------
+
+Co-authored-by: Claude Opus 5.5 <noreply@anthropic.com>
+
+### chore(deps)
+- [bd90ce5](https://github.com/fabulator/gpx-builder/commit/bd90ce562d2d74a4eaca2d0d1c492b5950e6ac36) changed: update github flow no_release dependency node to v24.22.3 (#275)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [1e29716](https://github.com/fabulator/gpx-builder/commit/1e29716dcd52cdd512da6246eea690b922dbdebd) changed: update github flow no_release dependency node to v24.22.2 (#274)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [0652781](https://github.com/fabulator/gpx-builder/commit/06527815a68b207badb08b3a4cf8f87146044333) changed: update github flow no_release dependency node to v24.22.1 (#272)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [9d4df5a](https://github.com/fabulator/gpx-builder/commit/9d4df5a731a69ae241ead0396f4d859f80479ec7) changed: update github flow no_release dependency node to v24.22.0 (#271)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [6b83375](https://github.com/fabulator/gpx-builder/commit/6b83375c2f6a7ffbf46b54bf4cf4e06ee421115b) changed: update github flow no_release dependency node to v24.21.0 (#270)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [90e28b3](https://github.com/fabulator/gpx-builder/commit/90e28b37f939d2207c6680982b19416832f3db06) changed: update github flow no_release dependency node to v24.20.0 (#268)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [2204122](https://github.com/fabulator/gpx-builder/commit/2204122340e6431ea4a36110114ce799ababaea1) changed: update github flow no_release dependency node to v24.19.0 (#267)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [972ff0c](https://github.com/fabulator/gpx-builder/commit/972ff0c16125e64a73bba2277db8f6948e6f8c4c) changed: update github flow no_release dependency node to v24.18.1 (#266)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [789c1ab](https://github.com/fabulator/gpx-builder/commit/789c1ab9a320c7209a9873ab469dcb04d2843409) changed: update github flow no_release dependency node to v24.18.0 (#264)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [3df7b09](https://github.com/fabulator/gpx-builder/commit/3df7b0920cf50a817e1e1e9396be99afecdfa875) changed: update github flow no_release dependency node to v24.17.0 (#263)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [12d2666](https://github.com/fabulator/gpx-builder/commit/12d26668fd95d7788d5ecac77e7e6f043e516cdc) changed: update github flow no_release dependency node to v24.16.0 (#260)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [bc4a362](https://github.com/fabulator/gpx-builder/commit/bc4a3623ed178cf3c433d2924493d8bec349021e) changed: update github flow no_release dependency node to v24.15.0 (#258)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+
+### Changed
+- [3c7a651](https://github.com/fabulator/gpx-builder/commit/3c7a651b903c1a759d74fb9b60404e5daa8c95d5) Update Github Flow  dependency node to v24.14.1 (#257)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [6c5d295](https://github.com/fabulator/gpx-builder/commit/6c5d295dce67fd0ef1d7a7df8a0e11ce651ee897) Update Github Flow  dependency node to v24.14.0 (#256)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [c25340b](https://github.com/fabulator/gpx-builder/commit/c25340b05ada3728ad231b9998c50af830f327b8) Update Github Flow  dependency node to v24.13.1 (#255)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [852724d](https://github.com/fabulator/gpx-builder/commit/852724df89c25e84e67a48fe244f9e65dee44d99) Update Github Flow  dependency node to v24.13.0 (#253)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [1be792b](https://github.com/fabulator/gpx-builder/commit/1be792be0ad7a527255308e53b6558d44181557e) Update Github Flow  dependency node to v24.12.0 (#252)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [e5db799](https://github.com/fabulator/gpx-builder/commit/e5db799761669954f834ee361bf13cb41121e6dd) Update Github Flow  dependency node to v24.11.1 (#248)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+- [3501bba](https://github.com/fabulator/gpx-builder/commit/3501bba4afadb585b5d181694945047e04958406) Update Github Flow  dependency node to v24.11.0 (#247)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+
 ## v6.0.0 (2025-10-30)
 ### Changed
 - [1a1dee6](https://github.com/fabulator/gpx-builder/commit/1a1dee68ac4a78067fc16c6854494956e8f3afbe) Update dependency xmlbuilder2 to v4 BREAKING
