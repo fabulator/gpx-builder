@@ -75,3 +75,7 @@ Library contains three Builders:
 Types
 
 What you find in [type file](https://github.com/fabulator/gpx-builder/blob/master/src/types.ts) are types that are used as object for builders. Eg. you can create object based on `WayPoint` and use it directly to creator. You can also use `Point` class in builder section that has more developer friendly constructor. It will convert you data to `WayPoint` type.   
+
+## For AI agents
+
+A compact, agent-oriented API reference with examples and gotchas is in [`llms.txt`](./llms.txt). It is also shipped in the npm package (`node_modules/gpx-builder/llms.txt`).
