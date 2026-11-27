@@ -39,7 +39,7 @@
   "devDependencies": {
     "@babel/core": "^8.1.3",
     "@types/node": "^26.6.6",
-    "babel-config-fabulator": "^2.0.0",
+    "babel-config-fabulator": "^3.0.0",
     "commitlint-config-fabulator": "^6.1.0",
     "eslint": "^10.15.0",
     "eslint-config-fabulator": "^6.0.1",
