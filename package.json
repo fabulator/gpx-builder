@@ -42,7 +42,7 @@
     "babel-config-fabulator": "^2.0.0",
     "commitlint-config-fabulator": "^6.1.0",
     "eslint": "^10.15.0",
-    "eslint-config-fabulator": "^6.0.1",
+    "eslint-config-fabulator": "^7.0.0",
     "husky": "^9.1.7",
     "rollup-config-fabulator": "^3.0.0",
     "semantic-release-config-fabulator": "^8.0.1",
